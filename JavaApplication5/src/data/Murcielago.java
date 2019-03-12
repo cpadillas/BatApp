@@ -10,5 +10,8 @@ package data;
  * @author crist
  */
 public class Murcielago {
-    boolean hojaNasal;
+    Boolean hojaNasal; /*0=>Ausente, 1=>Presente*/
+    Boolean colaLibre; /*0=>Contenida, 1=>Libre*/
+    Boolean bolsasProtopatagio; /*0=>Ausente, 1=>Presente*/
+    Boolean falangeTercerDedo; /*0=>Ausente, 1=>Presente*/
 }
