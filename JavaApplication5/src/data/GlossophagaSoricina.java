@@ -9,6 +9,6 @@ package data;
  *
  * @author crist
  */
-public class GlossophagaSoricina {
+public class GlossophagaSoricina extends Phyllostomidae2 {
     
 }
