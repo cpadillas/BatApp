@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class GUI extends javax.swing.JFrame {
 
-     ImageIcon icon1 = new ImageIcon(
+    ImageIcon icon1 = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Libro.png"));
     
     ImageIcon icon2 = new ImageIcon(
@@ -21,7 +21,7 @@ public class GUI extends javax.swing.JFrame {
     this.getClass().getResource("/UI/Resources/Bat.png"));
     
      ImageIcon ejemplo = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/ejemplo.png"));
+    this.getClass().getResource("/UI/Resources/Retratos/ejemplo.png"));
     
     Image Fotito = icon4.getImage();
     
@@ -37,11 +37,12 @@ public class GUI extends javax.swing.JFrame {
         this.setTitle("BatApp");
         Lista.setModel(DefineModel());
         
-        Banco.setIconAt(0, icon1);
-        Banco.setIconAt(1, icon2);
-        Banco.setIconAt(2, icon3);
-        this.setExtendedState(GUI.MAXIMIZED_BOTH); 
+        Ventana.setIconAt(0, icon1);
+        Ventana.setIconAt(1, icon2);
+        Ventana.setIconAt(2, icon3);
+        //this.setExtendedState(GUI.MAXIMIZED_BOTH); 
         this.setIconImage(Fotito);
+        Foto.setIcon(ejemplo);
         
      
         //this.set
@@ -58,15 +59,20 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Banco = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        Ventana = new javax.swing.JTabbedPane();
+        Añadir = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Lista = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         Foto = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Banco = new javax.swing.JPanel();
+        Identificar = new javax.swing.JPanel();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -75,81 +81,115 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
 
-        Banco.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        Banco.setFont(new java.awt.Font("Tempus Sans ITC", 0, 15)); // NOI18N
+        Ventana.setFont(new java.awt.Font("Tempus Sans ITC", 0, 15)); // NOI18N
 
         Lista.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        Lista.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                ListaPropertyChange(evt);
+            }
+        });
+        Lista.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                ListaValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(Lista);
 
         jLabel1.setText("Selecciona un murciélago");
 
-        jButton1.setText("jButton1");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-
         Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(182, 182, 182))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Nombre:");
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Lala");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Familia:");
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Mimi");
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Alimentación:");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Dulces");
+
+        javax.swing.GroupLayout AñadirLayout = new javax.swing.GroupLayout(Añadir);
+        Añadir.setLayout(AñadirLayout);
+        AñadirLayout.setHorizontalGroup(
+            AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AñadirLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(97, 97, 97)
-                .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                .addGap(0, 108, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 125, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        AñadirLayout.setVerticalGroup(
+            AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AñadirLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(11, 11, 11)
+                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                .addGap(53, 53, 53)
-                .addComponent(jButton1)
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
-        Banco.addTab("Banco de Murciélagos", jPanel1);
+        Ventana.addTab("Banco de Murciélagos", Añadir);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
+        javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
+        Banco.setLayout(BancoLayout);
+        BancoLayout.setHorizontalGroup(
+            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 827, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
-        );
-
-        Banco.addTab("Identificar un murciélago", jPanel2);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
+        BancoLayout.setVerticalGroup(
+            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 566, Short.MAX_VALUE)
         );
 
-        Banco.addTab("Añadir un murciélago", jPanel3);
+        Ventana.addTab("Identificar un murciélago", Banco);
+
+        javax.swing.GroupLayout IdentificarLayout = new javax.swing.GroupLayout(Identificar);
+        Identificar.setLayout(IdentificarLayout);
+        IdentificarLayout.setHorizontalGroup(
+            IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 827, Short.MAX_VALUE)
+        );
+        IdentificarLayout.setVerticalGroup(
+            IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 566, Short.MAX_VALUE)
+        );
+
+        Ventana.addTab("Añadir un murciélago", Identificar);
 
         BatApp.setText("BatApp");
 
@@ -172,11 +212,11 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Banco, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(Ventana)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Banco, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(Ventana)
         );
 
         pack();
@@ -186,9 +226,13 @@ public class GUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_SalirMousePressed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        PonerFoto();
-    }//GEN-LAST:event_jButton1MouseClicked
+    private void ListaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ListaValueChanged
+      NavegarBanco();
+    }//GEN-LAST:event_ListaValueChanged
+
+    private void ListaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ListaPropertyChange
+      
+    }//GEN-LAST:event_ListaPropertyChange
 
     /**
      * @param args the command line arguments
@@ -223,7 +267,7 @@ public class GUI extends javax.swing.JFrame {
             new GUI().setVisible(true);
         });
         
-         
+        
          
      
     }
@@ -244,29 +288,38 @@ public class GUI extends javax.swing.JFrame {
        Foto.setSize(ancho,altura);
        Foto.setIcon(ejemplo);
    }
-
-
    
-
+   public void NavegarBanco(){
+   String Murci=Lista.getSelectedValue();
+   System.out.println(Lista.getSelectedValue());
+   if ("Murcielago 1".equals(Murci)){
+       PonerFoto();
+   }
    
    
-    
-    
-    
+   
+   }
 
+
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
-    private javax.swing.JTabbedPane Banco;
+    private javax.swing.JPanel Añadir;
+    private javax.swing.JPanel Banco;
     private javax.swing.JMenu BatApp;
     private javax.swing.JLabel Foto;
+    private javax.swing.JPanel Identificar;
     private javax.swing.JList<String> Lista;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenuItem Salir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTabbedPane Ventana;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
