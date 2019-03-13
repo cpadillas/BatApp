@@ -1,6 +1,8 @@
 package UI;
 
+import java.awt.Color;
 import java.awt.Image;
+
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 
@@ -20,7 +22,13 @@ public class GUI extends javax.swing.JFrame {
     ImageIcon icon4 = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Bat.png"));
     
-     ImageIcon ejemplo = new ImageIcon(
+    ImageIcon Bienvenido = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Bienvenido.png"));
+    
+    ImageIcon encontrar = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Encontrar.png"));
+    
+    ImageIcon ejemplo = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Retratos/ejemplo.png"));
     
     Image Fotito = icon4.getImage();
@@ -32,17 +40,23 @@ public class GUI extends javax.swing.JFrame {
     
     public GUI() {
         
-        
+   
         initComponents();
         this.setTitle("BatApp");
+        this.setForeground(Color.RED);
+        
+      
+        this.setIconImage(Fotito);
+        
         Lista.setModel(DefineModel());
         
         Ventana.setIconAt(0, icon1);
         Ventana.setIconAt(1, icon2);
         Ventana.setIconAt(2, icon3);
         //this.setExtendedState(GUI.MAXIMIZED_BOTH); 
-        this.setIconImage(Fotito);
-        Foto.setIcon(ejemplo);
+        
+        Foto.setIcon(Bienvenido);
+        Encontrar.setIcon(encontrar);
         
      
         //this.set
@@ -73,6 +87,14 @@ public class GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Banco = new javax.swing.JPanel();
         Identificar = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        SubirFoto = new javax.swing.JButton();
+        Encontrar = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -178,15 +200,56 @@ public class GUI extends javax.swing.JFrame {
 
         Ventana.addTab("Identificar un murciélago", Banco);
 
+        jLabel8.setText("jLabel8");
+
+        jLabel9.setText("jLabel9");
+
+        jLabel10.setText("jLabel10");
+
+        SubirFoto.setText("Subir Foto");
+
         javax.swing.GroupLayout IdentificarLayout = new javax.swing.GroupLayout(Identificar);
         Identificar.setLayout(IdentificarLayout);
         IdentificarLayout.setHorizontalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 827, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IdentificarLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(Encontrar, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextField1)
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
+                .addGap(222, 222, 222))
+            .addGroup(IdentificarLayout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(SubirFoto)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         IdentificarLayout.setVerticalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(IdentificarLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IdentificarLayout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Encontrar, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addComponent(SubirFoto)
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
@@ -286,6 +349,7 @@ public class GUI extends javax.swing.JFrame {
        int altura= ejemplo.getIconHeight();
        int ancho= ejemplo.getIconWidth();
        Foto.setSize(ancho,altura);
+       
        Foto.setIcon(ejemplo);
    }
    
@@ -293,10 +357,9 @@ public class GUI extends javax.swing.JFrame {
    String Murci=Lista.getSelectedValue();
    System.out.println(Lista.getSelectedValue());
    if ("Murcielago 1".equals(Murci)){
+       System.out.println("true");
        PonerFoto();
    }
-   
-   
    
    }
 
@@ -307,19 +370,27 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Añadir;
     private javax.swing.JPanel Banco;
     private javax.swing.JMenu BatApp;
+    private javax.swing.JLabel Encontrar;
     private javax.swing.JLabel Foto;
     private javax.swing.JPanel Identificar;
     private javax.swing.JList<String> Lista;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenuItem Salir;
+    private javax.swing.JButton SubirFoto;
     private javax.swing.JTabbedPane Ventana;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
