@@ -10,5 +10,15 @@ package data;
  * @author crist
  */
 public class Vespertilionidae extends Murcielago{
-    
+    Boolean paridadIncisivos;
+    int premolaresSuperiores;
+    int premolaresInferiores;
+
+    public Vespertilionidae(Boolean paridadIncisivos, int premolaresSuperiores, int premolaresInferiores, String nombre, 
+            String alimentacion, Boolean hojaNasal, Boolean colaLibre, Boolean bolsasProtopatagio, Boolean falangeTercerDedo) {
+        super(nombre, alimentacion, hojaNasal, colaLibre, bolsasProtopatagio, falangeTercerDedo);
+        this.paridadIncisivos = paridadIncisivos;
+        this.premolaresSuperiores = premolaresSuperiores;
+        this.premolaresInferiores = premolaresInferiores;
+    }
 }
