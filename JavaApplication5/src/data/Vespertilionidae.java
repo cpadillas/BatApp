@@ -13,6 +13,7 @@ public class Vespertilionidae extends Murcielago{
     Boolean paridadIncisivos;
     int premolaresSuperiores;
     int premolaresInferiores;
+    public static String Familia;
 
     public Vespertilionidae(Boolean paridadIncisivos, int premolaresSuperiores, int premolaresInferiores, String nombre, 
             String alimentacion, Boolean hojaNasal, Boolean colaLibre, Boolean bolsasProtopatagio, Boolean falangeTercerDedo) {
@@ -21,4 +22,14 @@ public class Vespertilionidae extends Murcielago{
         this.premolaresSuperiores = premolaresSuperiores;
         this.premolaresInferiores = premolaresInferiores;
     }
+
+    public static String getFamilia() {
+        return Familia;
+    }
+
+    public static void setFamilia(String Familia) {
+        Vespertilionidae.Familia = Familia;
+    }
+    
+    
 }
