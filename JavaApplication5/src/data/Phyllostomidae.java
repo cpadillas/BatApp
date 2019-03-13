@@ -10,23 +10,27 @@ package data;
  * @author crist
  */
 public class Phyllostomidae {
-    Boolean tipoHojaNasal; /* 1=Rudimentaria, 2=Prominente*/
-    Boolean incisivosSuperiores; /* 1=Mas anchos que caninos 2=Menores que los caninos*/
-    Boolean polex; /*1=Bien desarrollado 2=Pequeño*/
-    Boolean hocico;
-    Boolean formaHojaNasal;
-    Boolean largoOrejas;
-    Boolean surcoVertical;
-    Boolean lengua;
+    Boolean hocicoLargoYAngost;
+    Boolean trianguloHoja;
+    Boolean surcoProfundo;
+    Boolean lenguaLarga;
+    Boolean polexDesarrollado;
     Boolean cola;
-    Boolean uropatagio;
-    Boolean formaHocico;
-    Boolean tamanoOrejas;
-    Boolean largoHojaNasal;
-    Boolean lineasClarasEspalda;
-    Boolean verrugasBarbilla;
-    Boolean tamañoOrejasHojaNasal;
-    Boolean colaContenida;
-    Boolean antebrazo; 
+    Boolean uropatagioDesarrollado;
+    Boolean hocicoRedondeado;
+    Boolean lineasDorsales;
+    Boolean lineasFaciales;
+    Boolean premolaresInferiores; /*0=> 2, 1=>3*/
+    Boolean membranaLateral; /*0=>Anclada al pie, 1=>Anclada a tobillos*/
+    Boolean largoCalcar; /*0=>Mayor o igual que el pie, 1=>Menor que el pie*/
+    Boolean largoOreja; /*0=>Menor que 25mm, 1=> Mayor que 25mm*/
+    Boolean crestaSagital;
+    Boolean primerIncisivo; /*1=>Mas alto que ancho*/
+    Boolean protuberanciaLabioYMenton;
+    Boolean sierraFinaHojaNasal;
+    Boolean largoCola;
+    
+    
+    
     
 }
