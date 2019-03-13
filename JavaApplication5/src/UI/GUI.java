@@ -10,175 +10,225 @@ import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 
-
-
-
-
-
 public class GUI extends javax.swing.JFrame {
 
+    //Importamos las imágenes del menu desde la carpeta
     ImageIcon icon1 = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Libro.png"));
-    
+            this.getClass().getResource("/UI/Resources/Libro.png"));
+
     ImageIcon icon2 = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Lupa.png"));
-   
+            this.getClass().getResource("/UI/Resources/Lupa.png"));
+
     ImageIcon icon3 = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Mur.png"));
-    
+            this.getClass().getResource("/UI/Resources/Mur.png"));
+
     ImageIcon icon4 = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Bat.png"));
-    
+            this.getClass().getResource("/UI/Resources/Bat.png"));
+
     ImageIcon Bienvenido = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Bienvenido.png"));
-        
-    ImageIcon Encontrar= new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Encontrar.png"));
-    
-    ImageIcon ejemplo = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Retratos/ejemplo.png"));
-    
+            this.getClass().getResource("/UI/Resources/Bienvenido.png"));
+
+    ImageIcon Encontrar = new ImageIcon(
+            this.getClass().getResource("/UI/Resources/Encontrar.png"));
+
     Image Fotito = icon4.getImage();
-    
-    HashMap<String, Murcielago> MurciHashii = new HashMap <>();
-    HashMap<String, ImageIcon> ImageHashii = new HashMap <>();
-    
-    
-    
-    
-    
-   
-   
-    
-    
+
+    //Creamos los diccionarios de murcielagos y fotos respectivamente
+    HashMap<String, Murcielago> MurciHashii = new HashMap<>();
+    HashMap<String, ImageIcon> ImageHashii = new HashMap<>();
+
     public GUI() {
-        
-        ImageIcon IDesmodusRotundus = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Retratos/Desmodus Rotundus.png"));
-        
-        ImageIcon IGlossophagaSoricina = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Retratos/Glossophaga Soricina.png"));
-        
-        ImageIcon IVampyressa = new ImageIcon(
-    this.getClass().getResource("/UI/Resources/Retratos/Vampyressa thyrone.png"));
-        
-            Vespertilionidae MyotisRiparius = new Vespertilionidae (true, 1, 2, "Myotis Riparius", 
+
+        //Instancioamos los murciélagos con todos sus atributos
+        Vespertilionidae MyotisRiparius = new Vespertilionidae(true, 1, 2, "Myotis Riparius",
                 "Insectivoro", false, true, true, false);
-        Vespertilionidae EptesicusBrasiliensis = new Vespertilionidae (false, 3, 3, "Eptesicus Brasiliensis", 
+        Vespertilionidae EptesicusBrasiliensis = new Vespertilionidae(false, 3, 3, "Eptesicus Brasiliensis",
                 "Insectivoro", false, true, true, false);
-        
-        Emballonuridae SaccopteryxBilienata= new Emballonuridae(true, true, true, 
-            "Saccopteryx Bilienata", "Insectivoro", false, false, false, true);
-        Emballonuridae SaccopteryxLeptura= new Emballonuridae(true, true,false, 
-            "Saccopteryx Leptura", "Insectivoro", false, false, false, true);
-        Emballonuridae RhynchonycterisNaso= new Emballonuridae(true, false, null, 
-            "Rhynchonycteris Naso", "Insectivoro", false, false, false, true);
-        Emballonuridae CormuraBrevisrostris= new Emballonuridae(false, null, null, 
-            "Cormura Brevisrostris", "Insectivoro", false, false, false, true);
-        
-        Phyllostomidae PhyllostomusHastatus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, false, false, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null, 
+        Emballonuridae SaccopteryxBilienata = new Emballonuridae(true, true, true,
+                "Saccopteryx Bilienata", "Insectivoro", false, false, false, true);
+        Emballonuridae SaccopteryxLeptura = new Emballonuridae(true, true, false,
+                "Saccopteryx Leptura", "Insectivoro", false, false, false, true);
+        Emballonuridae RhynchonycterisNaso = new Emballonuridae(true, false, null,
+                "Rhynchonycteris Naso", "Insectivoro", false, false, false, true);
+        Emballonuridae CormuraBrevisrostris = new Emballonuridae(false, null, null,
+                "Cormura Brevisrostris", "Insectivoro", false, false, false, true);
+        Phyllostomidae PhyllostomusHastatus = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, false, false, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Hastatus", "Insectivoro", true);
-        Phyllostomidae PhyllostomusElongatus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, false, true, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null, 
+         Phyllostomidae PhyllostomusElongatus = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, false, true, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Elongatus", "Insectivoro", true);
-        Phyllostomidae PhyllostomusDiscolor= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, false, null, true, true, false, false, null, null, false, true, false, 'L', 'L', null, null, null, 
+                //
+         Phyllostomidae PhyllostomusDiscolor = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, false, null, true, true, false, false, null, null, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Discolor", "Insectivoro", true);
-        Phyllostomidae TrachopsChirrosus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, true, null, null, null, null, null, true, true, false, true, false, 'L', 'L', null, null, null, 
+        Phyllostomidae TrachopsChirrosus = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, true, null, null, null, null, null, true, true, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Trachops Chirrosus", "Carnivoro", true);
-        Phyllostomidae LampronycterisBrachyotis= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, true, null, true, false, null, null, false, false, false, true, false, 'L', 'L', null, null, null, 
+        Phyllostomidae LampronycterisBrachyotis = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, true, null, true, false, null, null, false, false, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Lampronycteris Brachyotis", "Carnivoro", true);
-        Phyllostomidae TrynycterisNiceforti= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, true, null, true, null, null, null, false, false, false, true, false, 'L', 'L', null, null, null, 
+        Phyllostomidae TrynycterisNiceforti = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, true, null, true, null, null, null, false, false, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Trynycteris Niceforti", "Pendiente", true);
-        Phyllostomidae LonchorhinaOrinocensis= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, null, null, null, null, null, null, null, null, true, true, false, 'L', 'L', null, null, null, 
+        Phyllostomidae LonchorhinaOrinocensis = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, null, null, null, null, null, null, null, null, true, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Lonchorhina Orinocensis", "Pendiente", true);
-        Phyllostomidae MimomCrenulatum= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, null, null, null, null, null, null, null, null, null, false, false, 'L', 'L', null, null, null, 
+        Phyllostomidae MimomCrenulatum = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, null, null, null, null, null, null, null, null, null, false, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Mimom Crenulatum", "Pendiente", true);
-        Phyllostomidae CarolliaBrevicauda= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', false, true, true, 
+        Phyllostomidae CarolliaBrevicauda = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', false, true, true,
                 null, null, null, null, null, null, null, null, null, null, 0, "Carollia Brevicauda", "Pendiente", true);
-        Phyllostomidae CarolliaCastanea= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', true, true, true, 
+        Phyllostomidae CarolliaCastanea = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', true, true, true,
                 null, null, null, null, null, null, null, null, null, null, 0, "Carollia Castanea", "Pendiente", true);
-        Phyllostomidae CarolliaPerspicillata= new Phyllostomidae(false, false, false, false, false, true, true, false, 
-                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', null, false, false, 
+        Phyllostomidae CarolliaPerspicillata = new Phyllostomidae(false, false, false, false, false, true, true, false,
+                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', null, false, false,
                 null, null, null, null, null, null, null, null, null, null, 0, "Carollia Perspicillata", "Pendiente", true);
-        Phyllostomidae ArtibeusObscurus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae ArtibeusObscurus = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Obscurus", "Pendiente", true);
-        Phyllostomidae ArtibeusAuquatorialis= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae ArtibeusAuquatorialis = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Auquatorialis", "Pendiente", true);
-        Phyllostomidae ArtibeusPlanirostris= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae ArtibeusPlanirostris = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Planirostris", "Pendiente", true);
-        Phyllostomidae ArtibeusLituratus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae ArtibeusLituratus = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, true, false, true, false, true, null, null, true, null, 0, "Artibeus Lituratus", "Pendiente", true);
-        Phyllostomidae DermanuraAnderseni= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae DermanuraAnderseni = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, false, true, null, null, true, null, 0, "Dermanura Anderseni", "Pendiente", true);
-        Phyllostomidae UrodermaMagnirostrum= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                true, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae UrodermaMagnirostrum = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                true, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, false, true, true, null, 0, "Uroderma Magnirostrum", "Pendiente", true);
-        Phyllostomidae UrodermaBilobatum= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                true, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae UrodermaBilobatum = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                true, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, true, false, true, null, 0, "Uroderma Bilobatum", "Pendiente", true);
-        Phyllostomidae UrodermaSp= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                true, null, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae UrodermaSp = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                true, null, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, null, null, true, null, 0, "Uroderma Sp", "Pendiente", true);
-        Phyllostomidae SturniraParvidens= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae SturniraParvidens = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Parvidens", "Pendiente", true);
-        Phyllostomidae SturniraSp= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae SturniraSp = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Sp", "Pendiente", true);
-        Phyllostomidae MesophyllaMacconelli= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae MesophyllaMacconelli = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, true, null, null, null, false, null, null, null, null, 0, "Mesphylla Macconelli", "Pendiente", true);
-        Phyllostomidae PlatyrrhinusBranchycephalus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae PlatyrrhinusBranchycephalus = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, null, false, null, null, false, false, 2, "Platyrrhinus Branchycephalus", "Pendiente", true);
-        Phyllostomidae PlatyrrhinusHelleri= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+        Phyllostomidae PlatyrrhinusHelleri = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, null, false, null, null, false, false, 1, "Platyrrhinus Helleri", "Pendiente", true);
-        Phyllostomidae PlatyrhinusInfuscus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
-                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
-                null, null, null, null, null, false, null, null, false, false, 0, "Platyrhinus Infuscus", "Pendiente", true);       
-        Phyllostomidae DesmodusRotundus= new Phyllostomidae(null,null,null,null, true, null,null,null, 
-                null, null, null, null, null,null,null,null, null, null, null,null,null, '\0', '\0', null, null, null, 
-                null, null, null, null, null, null, null, null, null, null, 0, "Glossofaga Soricina", "Hematófago", true);
-        Phyllostomidae GlossophagaSoricina= new Phyllostomidae(true,true,true,true, false, null,null,null, 
-                null, null, null, null, null,null,null,null, null, null, null,null,null, '\0', '\0', null, null, null, 
+        Phyllostomidae PlatyrhinusInfuscus = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
+                null, null, null, null, null, false, null, null, false, false, 0, "Platyrhinus Infuscus", "Pendiente", true);
+        Phyllostomidae DesmodusRotundus = new Phyllostomidae(null, null, null, null, true, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, '\0', '\0', null, null, null,
+                null, null, null, null, null, null, null, null, null, null, 0, "Desmodus Rotundus", "Hematófago", true);
+        Phyllostomidae GlossophagaSoricina = new Phyllostomidae(true, true, true, true, false, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, '\0', '\0', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Glossofaga Soricina", "Nectarívoro", true);
-        Phyllostomidae Vampyressa= new Phyllostomidae(false,false,false,false,false,false,false,true, 
-                null, true, null, null, null,null,null,null, null, null, null,null,null, 'M', 'M', null, null, null, 
+        Phyllostomidae Vampyressa = new Phyllostomidae(false, false, false, false, false, false, false, true,
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'M', 'M', null, null, null,
                 null, null, null, null, null, false, null, null, false, true, 0, "Vampyressa", "Nectarívoro", true);
-     
+
+        //Importamos los retratos
+        ImageIcon IDesmodusRotundus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Desmodus Rotundus.png"));
+
+        ImageIcon IGlossophagaSoricina = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Glossophaga Soricina.png"));
+
+        ImageIcon IVampyressa = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Vampyressa thyrone.png"));
+
+        ImageIcon IMyotisRiparius = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Myotis riparius.png"));
+
+        ImageIcon IEptesicusBrasiliensis = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Eptesicus brasiliensis.png"));
+
+        ImageIcon ISaccopteryxBilienata = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Saccopteryx bilineata.png"));
+
+        ImageIcon ISaccopteryxLeptura = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Saccopteryx leptura.png"));
+
+        ImageIcon IRhynchonycterisNaso = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Rhynchonycteris naso.png"));
+
+        ImageIcon ICormuraBrevisrostris = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Cormura brevirostris.png"));
+
+        ImageIcon IPhyllostomusHastatus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Phyllostomus hastatus.png"));
+
+        ImageIcon IPhyllostomusElongatus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Phyllostomus elongatus.png"));
         
-    MurciHashii.put("Vampyressa", Vampyressa);
-    MurciHashii.put("Glossophaga Soricina", GlossophagaSoricina);
-    MurciHashii.put("Desmodus Rotundus", DesmodusRotundus);
-    
-    ImageHashii.put("Desmodus Rotundus", IDesmodusRotundus);
-    ImageHashii.put("Glossophaga Soricina", IGlossophagaSoricina);
-    ImageHashii.put("Vampyressa", IVampyressa);
+        ImageIcon IPhyllostomusDiscolor = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Phyllostomus discolor.png"));
+        ImageIcon ITrachopsChirrosus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Trachops cirrhosus.png"));
+        ImageIcon ILampronycterisBrachyotis = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Lampronycteris brachyotis.png"));
+        ImageIcon ITrynycterisNiceforti = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Trinycteris nicefori.png"));
+        ImageIcon ILonchorhinaOrinocensis = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Lonchorhina orinocensis.png"));
         
-    
-    AsociarImagenes();
-    
         
+        
+
+        //Rellenamos los diccionarios
+        MurciHashii.put(Vampyressa.getNombre(), Vampyressa);
+        MurciHashii.put(GlossophagaSoricina.getNombre(), GlossophagaSoricina);
+        MurciHashii.put(DesmodusRotundus.getNombre(), DesmodusRotundus);
+        MurciHashii.put(MyotisRiparius.getNombre(), MyotisRiparius);
+        MurciHashii.put(EptesicusBrasiliensis.getNombre(), EptesicusBrasiliensis);
+        MurciHashii.put(SaccopteryxLeptura.getNombre(), SaccopteryxLeptura);
+        MurciHashii.put(SaccopteryxBilienata.getNombre(), SaccopteryxBilienata);
+        MurciHashii.put(RhynchonycterisNaso.getNombre(), RhynchonycterisNaso);
+        MurciHashii.put(CormuraBrevisrostris.getNombre(), CormuraBrevisrostris);
+        MurciHashii.put(PhyllostomusHastatus.getNombre(), PhyllostomusHastatus);
+        MurciHashii.put(PhyllostomusElongatus.getNombre(), PhyllostomusElongatus);
+         MurciHashii.put(PhyllostomusDiscolor.getNombre(), PhyllostomusDiscolor);
+          MurciHashii.put(TrachopsChirrosus.getNombre(), TrachopsChirrosus);
+           MurciHashii.put(LampronycterisBrachyotis.getNombre(), LampronycterisBrachyotis);
+            MurciHashii.put(TrynycterisNiceforti.getNombre(), TrynycterisNiceforti);
+             MurciHashii.put(LonchorhinaOrinocensis.getNombre(), LonchorhinaOrinocensis);
+             
+
+        ImageHashii.put(Vampyressa.getNombre(), IVampyressa);
+        ImageHashii.put(GlossophagaSoricina.getNombre(), IGlossophagaSoricina);
+        ImageHashii.put(DesmodusRotundus.getNombre(), IDesmodusRotundus);
+        ImageHashii.put(MyotisRiparius.getNombre(), IMyotisRiparius);
+        ImageHashii.put(EptesicusBrasiliensis.getNombre(), IEptesicusBrasiliensis);
+        ImageHashii.put(SaccopteryxBilienata.getNombre(), ISaccopteryxBilienata);
+        ImageHashii.put(SaccopteryxLeptura.getNombre(), ISaccopteryxLeptura);
+        ImageHashii.put(RhynchonycterisNaso.getNombre(), IRhynchonycterisNaso);
+        ImageHashii.put(CormuraBrevisrostris.getNombre(), ICormuraBrevisrostris);
+        ImageHashii.put(PhyllostomusHastatus.getNombre(), IPhyllostomusHastatus);
+        ImageHashii.put(PhyllostomusElongatus.getNombre(), IPhyllostomusElongatus);
+            ImageHashii.put(PhyllostomusDiscolor.getNombre(), IPhyllostomusDiscolor);
+        ImageHashii.put(TrachopsChirrosus.getNombre(), ITrachopsChirrosus);
+        ImageHashii.put(LampronycterisBrachyotis.getNombre(), ILampronycterisBrachyotis);
+        ImageHashii.put(TrynycterisNiceforti.getNombre(), ITrynycterisNiceforti);
+        ImageHashii.put(LonchorhinaOrinocensis.getNombre(), ILonchorhinaOrinocensis);
+        
+
+        //Asociamos las fotos a los respectivos murcielagos
+        AsociarImagenes();
+
+        //Modificamos un tanto la interfaz
         initComponents();
         this.setTitle("BatApp");
-        
-        Lista.setModel(DefineModel());
-        
         Ventana.setIconAt(0, icon1);
         Ventana.setIconAt(1, icon2);
         Ventana.setIconAt(2, icon3);
@@ -186,12 +236,13 @@ public class GUI extends javax.swing.JFrame {
         this.setIconImage(Fotito);
         Foto.setIcon(Bienvenido);
         Agregar.setIcon(Encontrar);
-     
+
+        //Llenamos la lista del banco
+        Lista.setModel(DefineModel());
+
         //this.set
     }
 
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -296,20 +347,21 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(11, 11, 11)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(AñadirLayout.createSequentialGroup()
+                        .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7))
                     .addComponent(jScrollPane1))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
                 .addContainerGap(243, Short.MAX_VALUE))
         );
 
@@ -362,7 +414,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                         .addGap(168, 168, 168)
                         .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,7 +434,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(jLabel9)
@@ -439,11 +491,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirMousePressed
 
     private void ListaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ListaValueChanged
-      NavegarBanco();
+        NavegarBanco();
     }//GEN-LAST:event_ListaValueChanged
 
     private void ListaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ListaPropertyChange
-      
+
     }//GEN-LAST:event_ListaPropertyChange
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -484,60 +536,56 @@ public class GUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-          
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new GUI().setVisible(true);
         });
-        
-        
-         
-     
+
     }
-    
-    
-   public DefaultListModel DefineModel(){
-       
-       
-   DefaultListModel<String> model = new DefaultListModel<>();
-   
-    Set<String> Claves;
+
+    public DefaultListModel DefineModel() {
+
+        DefaultListModel<String> model = new DefaultListModel<>();
+
+        Set<String> Claves;
         Claves = MurciHashii.keySet();
-        Claves.forEach((Clave) -> { 
+        Claves.forEach((Clave) -> {
             model.addElement(Clave);
         });
-  
-   return model;
-}
-   
-   public void PonerFoto(ImageIcon ejemplo){
-       int altura= ejemplo.getIconHeight();
-       int ancho= ejemplo.getIconWidth();
-       Foto.setSize(ancho,altura);
-       Foto.setIcon(ejemplo);
-   }
-   
-   public void LlenarLista(){
-   
-   
-   }
-   
-   public void NavegarBanco(){
-       
-   String Murci=Lista.getSelectedValue();
-   System.out.println(Lista.getSelectedValue());
-   ImageIcon Foto1=ImageHashii.get(Murci);
-  
-       PonerFoto(Foto1);
-   
-   
-   
-   
-   }
+
+        return model;
+    }
+
+    public void PonerFoto(ImageIcon fotito) {
+        int altura = fotito.getIconHeight();
+        int ancho = fotito.getIconWidth();
+        Foto.setSize(ancho, altura);
+        Foto.setIcon(fotito);
+    }
+
+    public void NavegarBanco() {
+
+        String Murci = Lista.getSelectedValue();
+        System.out.println(Lista.getSelectedValue());
+        ImageIcon Foto1 = ImageHashii.get(Murci);
+
+        PonerFoto(Foto1);
+
+    }
+
+    private void AsociarImagenes() {
+        Set<String> Claves;
+        Claves = MurciHashii.keySet();
+        Claves.forEach((Clave) -> {
+            ImageIcon Temp = ImageHashii.get(Clave);
+            Murcielago Temp2 = MurciHashii.get(Clave);
+            Temp2.setFoto(Temp);
+        });
+
+    }
 
 
-  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Agregar;
     private javax.swing.JMenu Ayuda;
@@ -567,14 +615,4 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
-    private void AsociarImagenes() {
-        Set<String> Claves;
-        Claves = MurciHashii.keySet();
-        Claves.forEach((Clave) -> { 
-            ImageIcon Temp= ImageHashii.get(Clave);
-            Murcielago Temp2 = MurciHashii.get(Clave);
-            Temp2.setFoto(Temp);
-        });
-        
-    }
 }
