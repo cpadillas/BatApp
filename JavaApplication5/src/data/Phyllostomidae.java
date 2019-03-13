@@ -46,7 +46,7 @@ public class Phyllostomidae extends Murcielago{
     Boolean depresionRostro;
     Boolean incisivosInferioresTrilobulados;
     Boolean incisivosMediosBifidos;
-    Boolean cuspidesAccesorias;
+    int cuspidesAccesorias;
 
     public Phyllostomidae(Boolean hocicoLargoYAngost, Boolean trianguloHoja, Boolean surcoProfundo, Boolean lenguaLarga, 
             Boolean polexDesarrollado, Boolean cola, Boolean uropatagioDesarrollado, Boolean hocicoRedondeado, 
@@ -57,7 +57,7 @@ public class Phyllostomidae extends Murcielago{
             Boolean igualdadIncisivosExterInter, Boolean entradaMuescaMandibular, Boolean molaresSuperiores, 
             Boolean molaresInferiores, Boolean prepostOrbitalesDesarrollados, Boolean pelajeMoteado, 
             Boolean todosIncisivosBilobados, Boolean igualdadIncisivosSuperiores, Boolean craneoRecto, Boolean depresionRostro, 
-            Boolean incisivosInferioresTrilobulados, Boolean incisivosMediosBifidos, Boolean cuspidesAccesorias, 
+            Boolean incisivosInferioresTrilobulados, Boolean incisivosMediosBifidos, int cuspidesAccesorias, 
             String nombre, String alimentacion, Boolean hojaNasal) {
         super(nombre, alimentacion, hojaNasal);
         this.hocicoLargoYAngost = hocicoLargoYAngost;
