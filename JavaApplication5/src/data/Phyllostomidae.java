@@ -29,7 +29,24 @@ public class Phyllostomidae {
     Boolean protuberanciaLabioYMenton;
     Boolean sierraFinaHojaNasal;
     Boolean largoCola;
-    
+    Boolean dosIncisivosInferiores;
+    Boolean verrugasBarbilla;
+    char tamañoOrejas; /*S=>Mediana, M=>Grande, L=>Muy Grande*/
+    char tamañoHojaNasal; /*S=>Mediana, M=>Grande, L=>Muy Grande*/
+    Boolean premolarInferiorDoblePrimerMolar;
+    Boolean igualdadIncisivosExterInter;
+    Boolean entradaMuescaMandibular;
+    Boolean molaresSuperiores; /*Tiene 2*/
+    Boolean molaresInferiores; /*Tiene 3*/
+    Boolean prepostOrbitalesDesarrollados;
+    Boolean pelajeMoteado;
+    Boolean todosIncisivosBilobados;
+    Boolean igualdadIncisivosSuperiores;
+    Boolean craneoRecto;
+    Boolean depresionRostro;
+    Boolean incisivosInferioresTrilobulados;
+    Boolean incisivosMediosBifidos;
+    Boolean cuspidesAccesorias;
     
     
     
