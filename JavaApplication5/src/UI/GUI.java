@@ -1,8 +1,17 @@
 package UI;
 
+import data.Emballonuridae;
+import data.Murcielago;
+import data.Phyllostomidae;
+import data.Vespertilionidae;
 import java.awt.Image;
+import java.util.HashMap;
+import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+
+
+
 
 
 
@@ -20,10 +29,22 @@ public class GUI extends javax.swing.JFrame {
     ImageIcon icon4 = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Bat.png"));
     
-     ImageIcon ejemplo = new ImageIcon(
+    ImageIcon Bienvenido = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Bienvenido.png"));
+        
+    ImageIcon Encontrar= new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Encontrar.png"));
+    
+    ImageIcon ejemplo = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Retratos/ejemplo.png"));
     
     Image Fotito = icon4.getImage();
+    
+    HashMap<String, Murcielago> MurciHashii = new HashMap <>();
+    HashMap<String, ImageIcon> ImageHashii = new HashMap <>();
+    
+    
+    
     
     
    
@@ -32,9 +53,130 @@ public class GUI extends javax.swing.JFrame {
     
     public GUI() {
         
+        ImageIcon IDesmodusRotundus = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Retratos/Desmodus Rotundus.png"));
+        
+        ImageIcon IGlossophagaSoricina = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Retratos/Glossophaga Soricina.png"));
+        
+        ImageIcon IVampyressa = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Retratos/Vampyressa thyrone.png"));
+        
+            Vespertilionidae MyotisRiparius = new Vespertilionidae (true, 1, 2, "Myotis Riparius", 
+                "Insectivoro", false, true, true, false);
+        Vespertilionidae EptesicusBrasiliensis = new Vespertilionidae (false, 3, 3, "Eptesicus Brasiliensis", 
+                "Insectivoro", false, true, true, false);
+        
+        Emballonuridae SaccopteryxBilienata= new Emballonuridae(true, true, true, 
+            "Saccopteryx Bilienata", "Insectivoro", false, false, false, true);
+        Emballonuridae SaccopteryxLeptura= new Emballonuridae(true, true,false, 
+            "Saccopteryx Leptura", "Insectivoro", false, false, false, true);
+        Emballonuridae RhynchonycterisNaso= new Emballonuridae(true, false, null, 
+            "Rhynchonycteris Naso", "Insectivoro", false, false, false, true);
+        Emballonuridae CormuraBrevisrostris= new Emballonuridae(false, null, null, 
+            "Cormura Brevisrostris", "Insectivoro", false, false, false, true);
+        
+        Phyllostomidae PhyllostomusHastatus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, false, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Hastatus", "Insectivoro", true);
+        Phyllostomidae PhyllostomusElongatus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, true, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Elongatus", "Insectivoro", true);
+        Phyllostomidae PhyllostomusDiscolor= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, null, true, true, false, false, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Discolor", "Insectivoro", true);
+        Phyllostomidae TrachopsChirrosus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, true, null, null, null, null, null, true, true, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Trachops Chirrosus", "Carnivoro", true);
+        Phyllostomidae LampronycterisBrachyotis= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, true, null, true, false, null, null, false, false, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Lampronycteris Brachyotis", "Carnivoro", true);
+        Phyllostomidae TrynycterisNiceforti= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, true, null, true, null, null, null, false, false, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Trynycteris Niceforti", "Pendiente", true);
+        Phyllostomidae LonchorhinaOrinocensis= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, null, null, null, null, null, null, null, null, true, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Lonchorhina Orinocensis", "Pendiente", true);
+        Phyllostomidae MimomCrenulatum= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, null, null, null, null, null, null, null, null, null, false, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Mimom Crenulatum", "Pendiente", true);
+        Phyllostomidae CarolliaBrevicauda= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', false, true, true, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Carollia Brevicauda", "Pendiente", true);
+        Phyllostomidae CarolliaCastanea= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', true, true, true, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Carollia Castanea", "Pendiente", true);
+        Phyllostomidae CarolliaPerspicillata= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', null, false, false, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Carollia Perspicillata", "Pendiente", true);
+        Phyllostomidae ArtibeusObscurus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Obscurus", "Pendiente", true);
+        Phyllostomidae ArtibeusAuquatorialis= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Auquatorialis", "Pendiente", true);
+        Phyllostomidae ArtibeusPlanirostris= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Planirostris", "Pendiente", true);
+        Phyllostomidae ArtibeusLituratus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                true, true, false, true, false, true, null, null, true, null, 0, "Artibeus Lituratus", "Pendiente", true);
+        Phyllostomidae DermanuraAnderseni= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, false, true, null, null, true, null, 0, "Dermanura Anderseni", "Pendiente", true);
+        Phyllostomidae UrodermaMagnirostrum= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                true, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, true, false, false, true, true, null, 0, "Uroderma Magnirostrum", "Pendiente", true);
+        Phyllostomidae UrodermaBilobatum= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                true, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, true, false, true, false, true, null, 0, "Uroderma Bilobatum", "Pendiente", true);
+        Phyllostomidae UrodermaSp= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                true, null, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, true, false, null, null, true, null, 0, "Uroderma Sp", "Pendiente", true);
+        Phyllostomidae SturniraParvidens= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Parvidens", "Pendiente", true);
+        Phyllostomidae SturniraSp= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Sp", "Pendiente", true);
+        Phyllostomidae MesophyllaMacconelli= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                true, true, null, null, null, false, null, null, null, null, 0, "Mesphylla Macconelli", "Pendiente", true);
+        Phyllostomidae PlatyrrhinusBranchycephalus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, null, false, null, null, false, false, 2, "Platyrrhinus Branchycephalus", "Pendiente", true);
+        Phyllostomidae PlatyrrhinusHelleri= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, null, false, null, null, false, false, 1, "Platyrrhinus Helleri", "Pendiente", true);
+        Phyllostomidae PlatyrhinusInfuscus= new Phyllostomidae(false, false, false, false, false, false, false, true, 
+                null, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null, 
+                null, null, null, null, null, false, null, null, false, false, 0, "Platyrhinus Infuscus", "Pendiente", true);       
+        Phyllostomidae DesmodusRotundus= new Phyllostomidae(null,null,null,null, true, null,null,null, 
+                null, null, null, null, null,null,null,null, null, null, null,null,null, '\0', '\0', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Glossofaga Soricina", "Hematófago", true);
+        Phyllostomidae GlossophagaSoricina= new Phyllostomidae(true,true,true,true, false, null,null,null, 
+                null, null, null, null, null,null,null,null, null, null, null,null,null, '\0', '\0', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, 0, "Glossofaga Soricina", "Nectarívoro", true);
+        Phyllostomidae Vampyressa= new Phyllostomidae(false,false,false,false,false,false,false,true, 
+                null, true, null, null, null,null,null,null, null, null, null,null,null, 'M', 'M', null, null, null, 
+                null, null, null, null, null, false, null, null, false, true, 0, "Vampyressa", "Nectarívoro", true);
+     
+        
+    MurciHashii.put("Vampyressa", Vampyressa);
+    MurciHashii.put("Glossophaga Soricina", GlossophagaSoricina);
+    MurciHashii.put("Desmodus Rotundus", DesmodusRotundus);
+    
+    ImageHashii.put("Desmodus Rotundus", IDesmodusRotundus);
+    ImageHashii.put("Glossophaga Soricina", IGlossophagaSoricina);
+    ImageHashii.put("Vampyressa", IVampyressa);
+        
+    
+    AsociarImagenes();
+    
         
         initComponents();
         this.setTitle("BatApp");
+        
         Lista.setModel(DefineModel());
         
         Ventana.setIconAt(0, icon1);
@@ -42,8 +184,8 @@ public class GUI extends javax.swing.JFrame {
         Ventana.setIconAt(2, icon3);
         //this.setExtendedState(GUI.MAXIMIZED_BOTH); 
         this.setIconImage(Fotito);
-        Foto.setIcon(ejemplo);
-        
+        Foto.setIcon(Bienvenido);
+        Agregar.setIcon(Encontrar);
      
         //this.set
     }
@@ -73,6 +215,14 @@ public class GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Banco = new javax.swing.JPanel();
         Identificar = new javax.swing.JPanel();
+        Agregar = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        Subir = new javax.swing.JButton();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -178,15 +328,77 @@ public class GUI extends javax.swing.JFrame {
 
         Ventana.addTab("Identificar un murciélago", Banco);
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("jLabel9");
+
+        jLabel10.setText("jLabel10");
+
+        jLabel11.setText("jLabel11");
+
+        Subir.setText("Subir Foto");
+
         javax.swing.GroupLayout IdentificarLayout = new javax.swing.GroupLayout(Identificar);
         Identificar.setLayout(IdentificarLayout);
         IdentificarLayout.setHorizontalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 827, Short.MAX_VALUE)
+            .addGroup(IdentificarLayout.createSequentialGroup()
+                .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IdentificarLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(168, 168, 168)
+                        .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)))
+                    .addGroup(IdentificarLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(Subir)))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         IdentificarLayout.setVerticalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(IdentificarLayout.createSequentialGroup()
+                .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IdentificarLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(IdentificarLayout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel9)
+                        .addGap(2, 2, 2)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(66, 66, 66)
+                .addComponent(Subir)
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
@@ -234,6 +446,18 @@ public class GUI extends javax.swing.JFrame {
       
     }//GEN-LAST:event_ListaPropertyChange
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -273,28 +497,40 @@ public class GUI extends javax.swing.JFrame {
     }
     
     
-   public static DefaultListModel DefineModel(){
+   public DefaultListModel DefineModel(){
+       
+       
    DefaultListModel<String> model = new DefaultListModel<>();
-   model.addElement("Murcielago 1");
-   model.addElement("Murcielago 2");
-   model.addElement("Alumno 3");
+   
+    Set<String> Claves;
+        Claves = MurciHashii.keySet();
+        Claves.forEach((Clave) -> { 
+            model.addElement(Clave);
+        });
   
    return model;
 }
    
-   public void PonerFoto(){
+   public void PonerFoto(ImageIcon ejemplo){
        int altura= ejemplo.getIconHeight();
        int ancho= ejemplo.getIconWidth();
        Foto.setSize(ancho,altura);
        Foto.setIcon(ejemplo);
    }
    
+   public void LlenarLista(){
+   
+   
+   }
+   
    public void NavegarBanco(){
+       
    String Murci=Lista.getSelectedValue();
    System.out.println(Lista.getSelectedValue());
-   if ("Murcielago 1".equals(Murci)){
-       PonerFoto();
-   }
+   ImageIcon Foto1=ImageHashii.get(Murci);
+  
+       PonerFoto(Foto1);
+   
    
    
    
@@ -303,6 +539,7 @@ public class GUI extends javax.swing.JFrame {
 
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Agregar;
     private javax.swing.JMenu Ayuda;
     private javax.swing.JPanel Añadir;
     private javax.swing.JPanel Banco;
@@ -312,14 +549,32 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JList<String> Lista;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenuItem Salir;
+    private javax.swing.JButton Subir;
     private javax.swing.JTabbedPane Ventana;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    private void AsociarImagenes() {
+        Set<String> Claves;
+        Claves = MurciHashii.keySet();
+        Claves.forEach((Clave) -> { 
+            ImageIcon Temp= ImageHashii.get(Clave);
+            Murcielago Temp2 = MurciHashii.get(Clave);
+            Temp2.setFoto(Temp);
+        });
+        
+    }
 }
