@@ -38,6 +38,11 @@ public class GUI extends javax.swing.JFrame {
     HashMap<String, ImageIcon> ImageHashii = new HashMap<>();
 
     public GUI() {
+        
+        
+       Emballonuridae.Familia="Emballonuridae";
+       Phyllostomidae.Familia="Phyllostomidae";
+       Vespertilionidae.Familia="Vespertilionidae";
 
         //Instancioamos los murciélagos con todos sus atributos
         Vespertilionidae MyotisRiparius = new Vespertilionidae(true, 1, 2, "Myotis Riparius",
@@ -208,17 +213,13 @@ public class GUI extends javax.swing.JFrame {
                 this.getClass().getResource("/UI/Resources/Retratos/Dermanura anderseni.png"));
                        ImageIcon IUrodermaMagnirostrum = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Uroderma magnirostrum.png"));
-                       
-                       
                         ImageIcon IUrodermaBilobatum = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Uroderma bilobatum.png"));
                           ImageIcon IMesophyllaMacconelli = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Mesophyla macconnelli.png"));
                             ImageIcon IPlatyrrhinusBranchycephalus = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Playrrhinus brachycephalus.png"));
-                            
-                            //Not sure about this image
-                              ImageIcon IPlatyrrhinusHelleri = new ImageIcon(
+                                 ImageIcon IPlatyrrhinusHelleri = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Platyrrhinus Hillieri.png"));
                                 ImageIcon IPlatyrhinusInfuscus = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Playrrhinus infuscus.png"));
@@ -334,11 +335,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Foto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        Nombre = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        Familia = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Alimentación = new javax.swing.JLabel();
         Banco = new javax.swing.JPanel();
         Identificar = new javax.swing.JPanel();
         Agregar = new javax.swing.JLabel();
@@ -379,21 +380,21 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Nombre:");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Lala");
+        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nombre.setText("Lala");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Familia:");
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Mimi");
+        Familia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Familia.setText("Mimi");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Alimentación:");
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Dulces");
+        Alimentación.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Alimentación.setText("Dulces");
 
         javax.swing.GroupLayout AñadirLayout = new javax.swing.GroupLayout(Añadir);
         Añadir.setLayout(AñadirLayout);
@@ -407,11 +408,11 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(Familia, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 125, Short.MAX_VALUE))
         );
@@ -427,15 +428,15 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
+                        .addComponent(Nombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
+                        .addComponent(Familia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7))
+                        .addComponent(Alimentación))
                     .addComponent(jScrollPane1))
                 .addContainerGap(243, Short.MAX_VALUE))
         );
@@ -637,6 +638,7 @@ public class GUI extends javax.swing.JFrame {
         int ancho = fotito.getIconWidth();
         Foto.setSize(ancho, altura);
         Foto.setIcon(fotito);
+        
     }
 
     public void NavegarBanco() {
@@ -644,8 +646,10 @@ public class GUI extends javax.swing.JFrame {
         String Murci = Lista.getSelectedValue();
         System.out.println(Lista.getSelectedValue());
         ImageIcon Foto1 = ImageHashii.get(Murci);
+        Murcielago Mumurci = MurciHashii.get(Murci);
 
         PonerFoto(Foto1);
+        PonerInfo(Mumurci);
 
     }
 
@@ -659,18 +663,27 @@ public class GUI extends javax.swing.JFrame {
         });
 
     }
+    
+    private void PonerInfo(Murcielago Mumurci) {
+        
+        Nombre.setText(Mumurci.getNombre());
+        Alimentación.setText(Mumurci.getAlimentacion());
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Agregar;
+    private javax.swing.JLabel Alimentación;
     private javax.swing.JMenu Ayuda;
     private javax.swing.JPanel Añadir;
     private javax.swing.JPanel Banco;
     private javax.swing.JMenu BatApp;
+    private javax.swing.JLabel Familia;
     private javax.swing.JLabel Foto;
     private javax.swing.JPanel Identificar;
     private javax.swing.JList<String> Lista;
     private javax.swing.JMenuBar Menu;
+    private javax.swing.JLabel Nombre;
     private javax.swing.JMenuItem Salir;
     private javax.swing.JButton Subir;
     private javax.swing.JTabbedPane Ventana;
@@ -678,16 +691,15 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    
 
 }
