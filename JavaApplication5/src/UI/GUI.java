@@ -1,5 +1,6 @@
 package UI;
 
+import data.Murcielago;
 import data.Phyllostomidae;
 import java.awt.Image;
 import java.util.HashMap;
@@ -26,10 +27,10 @@ public class GUI extends javax.swing.JFrame {
     ImageIcon icon4 = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Bat.png"));
     
-        ImageIcon Bienvenido = new ImageIcon(
+    ImageIcon Bienvenido = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Bienvenido.png"));
         
-                ImageIcon Encontrar= new ImageIcon(
+    ImageIcon Encontrar= new ImageIcon(
     this.getClass().getResource("/UI/Resources/Encontrar.png"));
     
     ImageIcon ejemplo = new ImageIcon(
@@ -37,7 +38,7 @@ public class GUI extends javax.swing.JFrame {
     
     Image Fotito = icon4.getImage();
     
-    HashMap<String, Phyllostomidae> MurciHashii = new HashMap <>();
+    HashMap<String, Murcielago> MurciHashii = new HashMap <>();
     HashMap<String, ImageIcon> ImageHashii = new HashMap <>();
     
     
@@ -85,6 +86,7 @@ public class GUI extends javax.swing.JFrame {
         
         initComponents();
         this.setTitle("BatApp");
+        
         Lista.setModel(DefineModel());
         
         Ventana.setIconAt(0, icon1);
@@ -412,9 +414,9 @@ public class GUI extends javax.swing.JFrame {
    
     Set<String> Claves;
         Claves = MurciHashii.keySet();
-        for (String Clave: Claves){ 
+        Claves.forEach((Clave) -> { 
             model.addElement(Clave);
-    }
+        });
   
    return model;
 }
@@ -478,11 +480,11 @@ public class GUI extends javax.swing.JFrame {
     private void AsociarImagenes() {
         Set<String> Claves;
         Claves = MurciHashii.keySet();
-        for (String Clave: Claves){ 
+        Claves.forEach((Clave) -> { 
             ImageIcon Temp= ImageHashii.get(Clave);
-            Phyllostomidae Temp2 = MurciHashii.get(Clave);
-            Temp2.setFoto(Temp); 
-    }
+            Murcielago Temp2 = MurciHashii.get(Clave);
+            Temp2.setFoto(Temp);
+        });
         
     }
 }
