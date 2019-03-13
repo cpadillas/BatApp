@@ -15,7 +15,6 @@ public class Emballonuridae extends Murcielago{
     Boolean lineasDorsales;
     Boolean sacoGlandular;
     Boolean antebrazo; /*Es 1 si es mayor a 45mm*/
-    public static String Familia;
     
 
     public Emballonuridae(Boolean lineasDorsales, Boolean sacoGlandular, Boolean antebrazo, 
@@ -50,14 +49,6 @@ public class Emballonuridae extends Murcielago{
 
     public void setAntebrazo(Boolean antebrazo) {
         this.antebrazo = antebrazo;
-    }
-
-    public static String getFamilia() {
-        return Familia;
-    }
-
-    public static void setFamilia(String Familia) {
-        Emballonuridae.Familia = Familia;
     }
 
     public ImageIcon getFoto() {

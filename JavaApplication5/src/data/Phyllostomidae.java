@@ -49,7 +49,6 @@ public class Phyllostomidae extends Murcielago{
     Boolean incisivosInferioresTrilobulados;
     Boolean incisivosMediosBifidos;
     int cuspidesAccesorias;
-    public static String Familia;
 
     public Phyllostomidae(Boolean hocicoLargoYAngost, Boolean trianguloHoja, Boolean surcoProfundo, Boolean lenguaLarga, 
             Boolean polexDesarrollado, Boolean cola, Boolean uropatagioDesarrollado, Boolean hocicoRedondeado, 
@@ -158,14 +157,4 @@ public class Phyllostomidae extends Murcielago{
         this.falangeTercerDedo = falangeTercerDedo;
     }
 
-    public static String getFamilia() {
-        return Familia;
-    }
-
-    public static void setFamilia(String Familia) {
-        Phyllostomidae.Familia = Familia;
-    }
-    
-    
-    
 }
