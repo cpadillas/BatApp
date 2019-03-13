@@ -7,6 +7,7 @@ package logic;
 
 import data.Emballonuridae;
 import data.Vespertilionidae;
+import data.Phyllostomidae;
 
 /**
  *
@@ -32,6 +33,19 @@ public class BatApp {
             "Rhynchonycteris Naso", "Insectivoro", false, false, false, true);
         Emballonuridae CormuraBrevisrostris= new Emballonuridae(false, null, null, 
             "Cormura Brevisrostris", "Insectivoro", false, false, false, true);
+        
+        Phyllostomidae PhyllostomusHastatus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, false, false, true, true, true, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, null, "Phyllostomus Hastatus", "Insectivoro", true);
+        Phyllostomidae PhyllostomusElongatus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, true, false, true, true, true, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, null, "Phyllostomus Elongatus", "Insectivoro", true);
+        Phyllostomidae PhyllostomusDiscolor= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, null, true, false, false, false, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, null, "Phyllostomus Discolor", "Insectivoro", true);
+        Phyllostomidae TrachopsChirrosus= new Phyllostomidae(false, false, false, false, false, true, true, false, 
+                null, null, false, null, true, false, false, false, null, null, false, true, false, 'L', 'L', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, null, "Trachops Chirrosus", "Carnivoro", true);
     }
     
 }
