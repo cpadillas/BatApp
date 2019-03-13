@@ -1,8 +1,14 @@
 package UI;
 
+import data.Phyllostomidae;
 import java.awt.Image;
+import java.util.HashMap;
+import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+
+
+
 
 
 
@@ -20,10 +26,19 @@ public class GUI extends javax.swing.JFrame {
     ImageIcon icon4 = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Bat.png"));
     
-     ImageIcon ejemplo = new ImageIcon(
+        ImageIcon Bienvenido = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Bienvenido.png"));
+    
+    ImageIcon ejemplo = new ImageIcon(
     this.getClass().getResource("/UI/Resources/Retratos/ejemplo.png"));
     
     Image Fotito = icon4.getImage();
+    
+    HashMap<String, Phyllostomidae> MurciHashii = new HashMap <>();
+    HashMap<String, ImageIcon> ImageHashii = new HashMap <>();
+    
+    
+    
     
     
    
@@ -32,6 +47,38 @@ public class GUI extends javax.swing.JFrame {
     
     public GUI() {
         
+        ImageIcon IDesmodusRotundus = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Retratos/Desmodus Rotundus.png"));
+        
+        ImageIcon IGlossophagaSoricina = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Retratos/Glossophaga Soricina.png"));
+        
+        ImageIcon IVampyressa = new ImageIcon(
+    this.getClass().getResource("/UI/Resources/Retratos/Vampyressa thyrone.png"));
+        
+        Phyllostomidae DesmodusRotundus= new Phyllostomidae(null,null,null,null, true, null,null,null, 
+                null, null, null, null, null,null,null,null, null, null, null,null,null, '\0', '\0', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, null, "Glossofaga Soricina", "Hematófago", true);
+        
+        Phyllostomidae GlossophagaSoricina= new Phyllostomidae(true,true,true,true, false, null,null,null, 
+                null, null, null, null, null,null,null,null, null, null, null,null,null, '\0', '\0', null, null, null, 
+                null, null, null, null, null, null, null, null, null, null, null, "Glossofaga Soricina", "Nectarívoro", true);
+        
+        Phyllostomidae Vampyressa= new Phyllostomidae(false,false,false,false,false,false,false,true, 
+                null, true, null, null, null,null,null,null, null, null, null,null,null, 'M', 'M', null, null, null, 
+                null, null, null, null, null, false, null, null, false, true, null, "Vampyressa", "Nectarívoro", true);
+        
+    MurciHashii.put("Vampyressa", Vampyressa);
+    MurciHashii.put("Glossophaga Soricina", GlossophagaSoricina);
+    MurciHashii.put("Desmodus Rotundus", DesmodusRotundus);
+    
+    ImageHashii.put("Desmodus Rotundus", IDesmodusRotundus);
+    ImageHashii.put("Glossophaga Soricina", IGlossophagaSoricina);
+    ImageHashii.put("Vampyressa", IVampyressa);
+        
+    
+    AsociarImagenes();
+    
         
         initComponents();
         this.setTitle("BatApp");
@@ -42,7 +89,7 @@ public class GUI extends javax.swing.JFrame {
         Ventana.setIconAt(2, icon3);
         //this.setExtendedState(GUI.MAXIMIZED_BOTH); 
         this.setIconImage(Fotito);
-        Foto.setIcon(ejemplo);
+        Foto.setIcon(Bienvenido);
         
      
         //this.set
@@ -273,28 +320,40 @@ public class GUI extends javax.swing.JFrame {
     }
     
     
-   public static DefaultListModel DefineModel(){
+   public DefaultListModel DefineModel(){
+       
+       
    DefaultListModel<String> model = new DefaultListModel<>();
-   model.addElement("Murcielago 1");
-   model.addElement("Murcielago 2");
-   model.addElement("Alumno 3");
+   
+    Set<String> Claves;
+        Claves = MurciHashii.keySet();
+        for (String Clave: Claves){ 
+            model.addElement(Clave);
+    }
   
    return model;
 }
    
-   public void PonerFoto(){
+   public void PonerFoto(ImageIcon ejemplo){
        int altura= ejemplo.getIconHeight();
        int ancho= ejemplo.getIconWidth();
        Foto.setSize(ancho,altura);
        Foto.setIcon(ejemplo);
    }
    
+   public void LlenarLista(){
+   
+   
+   }
+   
    public void NavegarBanco(){
+       
    String Murci=Lista.getSelectedValue();
    System.out.println(Lista.getSelectedValue());
-   if ("Murcielago 1".equals(Murci)){
-       PonerFoto();
-   }
+   ImageIcon Foto1=ImageHashii.get(Murci);
+  
+       PonerFoto(Foto1);
+   
    
    
    
@@ -322,4 +381,15 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void AsociarImagenes() {
+        Set<String> Claves;
+        Claves = MurciHashii.keySet();
+        for (String Clave: Claves){ 
+            ImageIcon Temp= ImageHashii.get(Clave);
+            Phyllostomidae Temp2 = MurciHashii.get(Clave);
+            Temp2.setFoto(Temp); 
+    }
+        
+    }
 }
