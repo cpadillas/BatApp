@@ -58,8 +58,7 @@ public class GUI extends javax.swing.JFrame {
          Phyllostomidae PhyllostomusElongatus = new Phyllostomidae(false, false, false, false, false, true, true, false,
                 null, null, false, true, false, false, true, true, null, null, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Elongatus", "Insectivoro", true);
-                //
-         Phyllostomidae PhyllostomusDiscolor = new Phyllostomidae(false, false, false, false, false, true, true, false,
+        Phyllostomidae PhyllostomusDiscolor = new Phyllostomidae(false, false, false, false, false, true, true, false,
                 null, null, false, null, true, true, false, false, null, null, false, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Phyllostomus Discolor", "Insectivoro", true);
         Phyllostomidae TrachopsChirrosus = new Phyllostomidae(false, false, false, false, false, true, true, false,
@@ -74,6 +73,7 @@ public class GUI extends javax.swing.JFrame {
         Phyllostomidae LonchorhinaOrinocensis = new Phyllostomidae(false, false, false, false, false, true, true, false,
                 null, null, null, null, null, null, null, null, null, null, true, true, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Lonchorhina Orinocensis", "Pendiente", true);
+                        //
         Phyllostomidae MimomCrenulatum = new Phyllostomidae(false, false, false, false, false, true, true, false,
                 null, null, null, null, null, null, null, null, null, null, null, false, false, 'L', 'L', null, null, null,
                 null, null, null, null, null, null, null, null, null, null, 0, "Mimom Crenulatum", "Pendiente", true);
@@ -86,9 +86,11 @@ public class GUI extends javax.swing.JFrame {
         Phyllostomidae CarolliaPerspicillata = new Phyllostomidae(false, false, false, false, false, true, true, false,
                 null, null, null, null, null, null, null, null, null, null, null, null, true, 'M', 'M', null, false, false,
                 null, null, null, null, null, null, null, null, null, null, 0, "Carollia Perspicillata", "Pendiente", true);
+        
         Phyllostomidae ArtibeusObscurus = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Obscurus", "Pendiente", true);
+        
         Phyllostomidae ArtibeusAuquatorialis = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 false, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, null, false, true, false, true, null, null, true, null, 0, "Artibeus Auquatorialis", "Pendiente", true);
@@ -104,9 +106,12 @@ public class GUI extends javax.swing.JFrame {
         Phyllostomidae UrodermaMagnirostrum = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 true, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, false, true, true, null, 0, "Uroderma Magnirostrum", "Pendiente", true);
+        
         Phyllostomidae UrodermaBilobatum = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 true, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, true, false, true, null, 0, "Uroderma Bilobatum", "Pendiente", true);
+        
+        //No image
         Phyllostomidae UrodermaSp = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 true, null, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, null, null, true, null, 0, "Uroderma Sp", "Pendiente", true);
@@ -116,6 +121,7 @@ public class GUI extends javax.swing.JFrame {
         Phyllostomidae SturniraSp = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Sp", "Pendiente", true);
+       //
         Phyllostomidae MesophyllaMacconelli = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, true, null, null, null, false, null, null, null, null, 0, "Mesphylla Macconelli", "Pendiente", true);
@@ -182,7 +188,40 @@ public class GUI extends javax.swing.JFrame {
                 this.getClass().getResource("/UI/Resources/Retratos/Trinycteris nicefori.png"));
         ImageIcon ILonchorhinaOrinocensis = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Lonchorhina orinocensis.png"));
-        
+        ImageIcon IMimomCrenulatum = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/MImon crenulatum.png"));
+        ImageIcon ICarolliaBrevicauda = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Carollia brevicauda.png"));
+        ImageIcon ICarolliaCastanea = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Carollia castanea.png"));
+        ImageIcon ICarolliaPerspicillata = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Carollia perspicillata.png"));
+        ImageIcon IArtibeusObscurus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Artibeus obscurus.png"));
+           ImageIcon IArtibeusAuquatorialis = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Artibeus aequatorialis.png"));
+              ImageIcon IArtibeusPlanirostris = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Artibeus planirostris.png"));
+                 ImageIcon IArtibeusLituratus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Artibeus lituratus.png"));
+                    ImageIcon IDermanuraAnderseni = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Dermanura anderseni.png"));
+                       ImageIcon IUrodermaMagnirostrum = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Uroderma magnirostrum.png"));
+                       
+                       
+                        ImageIcon IUrodermaBilobatum = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Uroderma bilobatum.png"));
+                          ImageIcon IMesophyllaMacconelli = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Mesophyla macconnelli.png"));
+                            ImageIcon IPlatyrrhinusBranchycephalus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Playrrhinus brachycephalus.png"));
+                            
+                            //Not sure about this image
+                              ImageIcon IPlatyrrhinusHelleri = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Platyrrhinus Hillieri.png"));
+                                ImageIcon IPlatyrhinusInfuscus = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Playrrhinus infuscus.png"));
         
         
 
@@ -203,7 +242,23 @@ public class GUI extends javax.swing.JFrame {
            MurciHashii.put(LampronycterisBrachyotis.getNombre(), LampronycterisBrachyotis);
             MurciHashii.put(TrynycterisNiceforti.getNombre(), TrynycterisNiceforti);
              MurciHashii.put(LonchorhinaOrinocensis.getNombre(), LonchorhinaOrinocensis);
-             
+        MurciHashii.put(MimomCrenulatum.getNombre(), MimomCrenulatum);
+        MurciHashii.put(CarolliaBrevicauda.getNombre(), CarolliaBrevicauda);
+        MurciHashii.put(CarolliaCastanea.getNombre(), CarolliaCastanea);
+        MurciHashii.put(CarolliaPerspicillata.getNombre(), CarolliaPerspicillata);
+        MurciHashii.put(ArtibeusObscurus.getNombre(), ArtibeusObscurus);
+           MurciHashii.put(ArtibeusAuquatorialis.getNombre(), ArtibeusAuquatorialis);
+              MurciHashii.put(ArtibeusPlanirostris.getNombre(), ArtibeusPlanirostris);
+                 MurciHashii.put(ArtibeusLituratus.getNombre(), ArtibeusLituratus);
+                    MurciHashii.put(DermanuraAnderseni.getNombre(), DermanuraAnderseni);
+                       MurciHashii.put(UrodermaMagnirostrum.getNombre(), UrodermaMagnirostrum);
+          MurciHashii.put(UrodermaBilobatum.getNombre(), UrodermaBilobatum);
+            MurciHashii.put(MesophyllaMacconelli.getNombre(), MesophyllaMacconelli);
+              MurciHashii.put(PlatyrrhinusBranchycephalus.getNombre(), PlatyrrhinusBranchycephalus);
+                MurciHashii.put(PlatyrrhinusHelleri.getNombre(), PlatyrrhinusHelleri);
+                  MurciHashii.put(PlatyrhinusInfuscus.getNombre(), PlatyrhinusInfuscus);
+                  
+        
 
         ImageHashii.put(Vampyressa.getNombre(), IVampyressa);
         ImageHashii.put(GlossophagaSoricina.getNombre(), IGlossophagaSoricina);
@@ -221,6 +276,26 @@ public class GUI extends javax.swing.JFrame {
         ImageHashii.put(LampronycterisBrachyotis.getNombre(), ILampronycterisBrachyotis);
         ImageHashii.put(TrynycterisNiceforti.getNombre(), ITrynycterisNiceforti);
         ImageHashii.put(LonchorhinaOrinocensis.getNombre(), ILonchorhinaOrinocensis);
+            ImageHashii.put(MimomCrenulatum.getNombre(), IMimomCrenulatum);
+            ImageHashii.put(CarolliaBrevicauda.getNombre(), ICarolliaBrevicauda);
+            ImageHashii.put(CarolliaCastanea.getNombre(), ICarolliaCastanea);
+            ImageHashii.put(CarolliaPerspicillata.getNombre(), ICarolliaPerspicillata);
+            ImageHashii.put(ArtibeusObscurus.getNombre(), IArtibeusObscurus);
+        ImageHashii.put(ArtibeusAuquatorialis.getNombre(), IArtibeusAuquatorialis);
+            ImageHashii.put(ArtibeusPlanirostris.getNombre(), IArtibeusPlanirostris);
+            ImageHashii.put(ArtibeusLituratus.getNombre(), IArtibeusLituratus);
+            ImageHashii.put(DermanuraAnderseni.getNombre(), IDermanuraAnderseni);
+            ImageHashii.put(UrodermaMagnirostrum.getNombre(), IUrodermaMagnirostrum);
+                  ImageHashii.put(UrodermaBilobatum.getNombre(), IUrodermaBilobatum);
+                    ImageHashii.put(MesophyllaMacconelli.getNombre(), IMesophyllaMacconelli);
+                      ImageHashii.put(PlatyrrhinusBranchycephalus.getNombre(), IPlatyrrhinusBranchycephalus);
+                        ImageHashii.put(PlatyrrhinusHelleri.getNombre(), IPlatyrrhinusHelleri);
+                          ImageHashii.put(PlatyrhinusInfuscus.getNombre(), IPlatyrhinusInfuscus);
+                          
+            
+            
+            
+            
         
 
         //Asociamos las fotos a los respectivos murcielagos
