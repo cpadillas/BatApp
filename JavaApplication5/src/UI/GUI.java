@@ -792,7 +792,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(Subir))
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))
                 .addGap(162, 162, 162)
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Crear)
@@ -947,6 +947,7 @@ public class GUI extends javax.swing.JFrame {
         else if(seleccion == JFileChooser.CANCEL_OPTION){ 
             Escoger.setVisible(false);
                     }  
+        
     }//GEN-LAST:event_SubirMouseClicked
 
     private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
@@ -954,7 +955,11 @@ public class GUI extends javax.swing.JFrame {
        Nombre=name.getText();
        Familia=family.getText();
        alimentacion=feeding.getText();
+       ImageIcon Fotillo=Preview;
        
+       Murcielago TempMurci = new Murcielago(Preview,Nombre,alimentacion);
+       MurciHashii.put(Nombre, TempMurci);
+       Lista.setModel(DefineModel());
     }//GEN-LAST:event_CrearMouseClicked
 
     /**
