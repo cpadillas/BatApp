@@ -581,6 +581,12 @@ public class GUI extends javax.swing.JFrame {
         Familia = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Alimentación = new javax.swing.JLabel();
+        Banco = new javax.swing.JPanel();
+        ImagenA = new javax.swing.JLabel();
+        ImagenN = new javax.swing.JLabel();
+        preguntaN = new javax.swing.JLabel();
+        preguntaA = new javax.swing.JLabel();
+        cantidad = new javax.swing.JLabel();
         Identificar = new javax.swing.JPanel();
         Agregar = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -590,12 +596,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         Subir = new javax.swing.JButton();
-        Banco = new javax.swing.JPanel();
-        ImagenA = new javax.swing.JLabel();
-        ImagenN = new javax.swing.JLabel();
-        preguntaN = new javax.swing.JLabel();
-        preguntaA = new javax.swing.JLabel();
-        cantidad = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -656,7 +656,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
@@ -665,7 +665,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 140, Short.MAX_VALUE))
+                .addGap(0, 125, Short.MAX_VALUE))
         );
         AñadirLayout.setVerticalGroup(
             AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -693,6 +693,72 @@ public class GUI extends javax.swing.JFrame {
         );
 
         Ventana.addTab("Banco de Murciélagos", Añadir);
+
+        ImagenA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenAMouseClicked(evt);
+            }
+        });
+
+        ImagenN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenNMouseClicked(evt);
+            }
+        });
+
+        preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preguntaN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                preguntaNMouseClicked(evt);
+            }
+        });
+
+        preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preguntaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                preguntaAMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
+        Banco.setLayout(BancoLayout);
+        BancoLayout.setHorizontalGroup(
+            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BancoLayout.createSequentialGroup()
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(preguntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(118, 118, 118)
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(158, Short.MAX_VALUE))
+        );
+        BancoLayout.setVerticalGroup(
+            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BancoLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(preguntaN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preguntaA, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(198, Short.MAX_VALUE))
+        );
+
+        Ventana.addTab("Identificar un murciélago", Banco);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -768,72 +834,6 @@ public class GUI extends javax.swing.JFrame {
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
-
-        ImagenA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImagenAMouseClicked(evt);
-            }
-        });
-
-        ImagenN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImagenNMouseClicked(evt);
-            }
-        });
-
-        preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preguntaN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                preguntaNMouseClicked(evt);
-            }
-        });
-
-        preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preguntaA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                preguntaAMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
-        Banco.setLayout(BancoLayout);
-        BancoLayout.setHorizontalGroup(
-            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BancoLayout.createSequentialGroup()
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BancoLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(preguntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(118, 118, 118)
-                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(BancoLayout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(158, Short.MAX_VALUE))
-        );
-        BancoLayout.setVerticalGroup(
-            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BancoLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(preguntaN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(preguntaA, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(198, Short.MAX_VALUE))
-        );
-
-        Ventana.addTab("Identificar un murciélago", Banco);
 
         BatApp.setText("BatApp");
 
