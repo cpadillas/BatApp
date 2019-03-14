@@ -39,11 +39,6 @@ public class GUI extends javax.swing.JFrame {
 
     public GUI() {
         
-        
-       Emballonuridae.Familia="Emballonuridae";
-       Phyllostomidae.Familia="Phyllostomidae";
-       Vespertilionidae.Familia="Vespertilionidae";
-
         //Instancioamos los murciélagos con todos sus atributos
         Vespertilionidae MyotisRiparius = new Vespertilionidae(true, 1, 2, "Myotis Riparius",
                 "Insectivoro", false, true, true, false);
@@ -115,18 +110,9 @@ public class GUI extends javax.swing.JFrame {
         Phyllostomidae UrodermaBilobatum = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 true, true, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 null, null, null, null, true, false, true, false, true, null, 0, "Uroderma Bilobatum", "Pendiente", true);
-        
-        //No image
-        Phyllostomidae UrodermaSp = new Phyllostomidae(false, false, false, false, false, false, false, true,
-                true, null, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
-                null, null, null, null, true, false, null, null, true, null, 0, "Uroderma Sp", "Pendiente", true);
-        Phyllostomidae SturniraParvidens = new Phyllostomidae(false, false, false, false, false, false, false, true,
+        Phyllostomidae SturniraLilium = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
-                null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Parvidens", "Pendiente", true);
-        Phyllostomidae SturniraSp = new Phyllostomidae(false, false, false, false, false, false, false, true,
-                false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
-                null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Sp", "Pendiente", true);
-       //
+                null, true, null, null, null, false, null, null, true, null, 0, "Sturnira Lilium", "Pendiente", true);
         Phyllostomidae MesophyllaMacconelli = new Phyllostomidae(false, false, false, false, false, false, false, true,
                 false, false, null, null, null, null, null, null, null, null, null, null, null, 'S', 'S', null, null, null,
                 true, true, null, null, null, false, null, null, null, null, 0, "Mesphylla Macconelli", "Pendiente", true);
@@ -223,9 +209,9 @@ public class GUI extends javax.swing.JFrame {
                 this.getClass().getResource("/UI/Resources/Retratos/Platyrrhinus Hillieri.png"));
                                 ImageIcon IPlatyrhinusInfuscus = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Retratos/Playrrhinus infuscus.png"));
+        ImageIcon ISturniraLilium = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Retratos/Sturnira lilium.png"));
         
-        
-
         //Rellenamos los diccionarios
         MurciHashii.put(Vampyressa.getNombre(), Vampyressa);
         MurciHashii.put(GlossophagaSoricina.getNombre(), GlossophagaSoricina);
@@ -238,26 +224,27 @@ public class GUI extends javax.swing.JFrame {
         MurciHashii.put(CormuraBrevisrostris.getNombre(), CormuraBrevisrostris);
         MurciHashii.put(PhyllostomusHastatus.getNombre(), PhyllostomusHastatus);
         MurciHashii.put(PhyllostomusElongatus.getNombre(), PhyllostomusElongatus);
-         MurciHashii.put(PhyllostomusDiscolor.getNombre(), PhyllostomusDiscolor);
-          MurciHashii.put(TrachopsChirrosus.getNombre(), TrachopsChirrosus);
-           MurciHashii.put(LampronycterisBrachyotis.getNombre(), LampronycterisBrachyotis);
-            MurciHashii.put(TrynycterisNiceforti.getNombre(), TrynycterisNiceforti);
-             MurciHashii.put(LonchorhinaOrinocensis.getNombre(), LonchorhinaOrinocensis);
+        MurciHashii.put(PhyllostomusDiscolor.getNombre(), PhyllostomusDiscolor);
+        MurciHashii.put(TrachopsChirrosus.getNombre(), TrachopsChirrosus);
+        MurciHashii.put(LampronycterisBrachyotis.getNombre(), LampronycterisBrachyotis);
+        MurciHashii.put(TrynycterisNiceforti.getNombre(), TrynycterisNiceforti);
+        MurciHashii.put(LonchorhinaOrinocensis.getNombre(), LonchorhinaOrinocensis);
         MurciHashii.put(MimomCrenulatum.getNombre(), MimomCrenulatum);
         MurciHashii.put(CarolliaBrevicauda.getNombre(), CarolliaBrevicauda);
         MurciHashii.put(CarolliaCastanea.getNombre(), CarolliaCastanea);
         MurciHashii.put(CarolliaPerspicillata.getNombre(), CarolliaPerspicillata);
         MurciHashii.put(ArtibeusObscurus.getNombre(), ArtibeusObscurus);
-           MurciHashii.put(ArtibeusAuquatorialis.getNombre(), ArtibeusAuquatorialis);
-              MurciHashii.put(ArtibeusPlanirostris.getNombre(), ArtibeusPlanirostris);
-                 MurciHashii.put(ArtibeusLituratus.getNombre(), ArtibeusLituratus);
-                    MurciHashii.put(DermanuraAnderseni.getNombre(), DermanuraAnderseni);
-                       MurciHashii.put(UrodermaMagnirostrum.getNombre(), UrodermaMagnirostrum);
-          MurciHashii.put(UrodermaBilobatum.getNombre(), UrodermaBilobatum);
-            MurciHashii.put(MesophyllaMacconelli.getNombre(), MesophyllaMacconelli);
-              MurciHashii.put(PlatyrrhinusBranchycephalus.getNombre(), PlatyrrhinusBranchycephalus);
-                MurciHashii.put(PlatyrrhinusHelleri.getNombre(), PlatyrrhinusHelleri);
-                  MurciHashii.put(PlatyrhinusInfuscus.getNombre(), PlatyrhinusInfuscus);
+        MurciHashii.put(ArtibeusAuquatorialis.getNombre(), ArtibeusAuquatorialis);
+        MurciHashii.put(ArtibeusPlanirostris.getNombre(), ArtibeusPlanirostris);
+        MurciHashii.put(ArtibeusLituratus.getNombre(), ArtibeusLituratus);
+        MurciHashii.put(DermanuraAnderseni.getNombre(), DermanuraAnderseni);
+        MurciHashii.put(UrodermaMagnirostrum.getNombre(), UrodermaMagnirostrum);
+        MurciHashii.put(UrodermaBilobatum.getNombre(), UrodermaBilobatum);
+        MurciHashii.put(MesophyllaMacconelli.getNombre(), MesophyllaMacconelli);
+        MurciHashii.put(PlatyrrhinusBranchycephalus.getNombre(), PlatyrrhinusBranchycephalus);
+        MurciHashii.put(PlatyrrhinusHelleri.getNombre(), PlatyrrhinusHelleri);
+        MurciHashii.put(PlatyrhinusInfuscus.getNombre(), PlatyrhinusInfuscus);
+        MurciHashii.put(SturniraLilium.getNombre(), SturniraLilium);
                   
         
 
@@ -272,33 +259,29 @@ public class GUI extends javax.swing.JFrame {
         ImageHashii.put(CormuraBrevisrostris.getNombre(), ICormuraBrevisrostris);
         ImageHashii.put(PhyllostomusHastatus.getNombre(), IPhyllostomusHastatus);
         ImageHashii.put(PhyllostomusElongatus.getNombre(), IPhyllostomusElongatus);
-            ImageHashii.put(PhyllostomusDiscolor.getNombre(), IPhyllostomusDiscolor);
+        ImageHashii.put(PhyllostomusDiscolor.getNombre(), IPhyllostomusDiscolor);
         ImageHashii.put(TrachopsChirrosus.getNombre(), ITrachopsChirrosus);
         ImageHashii.put(LampronycterisBrachyotis.getNombre(), ILampronycterisBrachyotis);
         ImageHashii.put(TrynycterisNiceforti.getNombre(), ITrynycterisNiceforti);
         ImageHashii.put(LonchorhinaOrinocensis.getNombre(), ILonchorhinaOrinocensis);
-            ImageHashii.put(MimomCrenulatum.getNombre(), IMimomCrenulatum);
-            ImageHashii.put(CarolliaBrevicauda.getNombre(), ICarolliaBrevicauda);
-            ImageHashii.put(CarolliaCastanea.getNombre(), ICarolliaCastanea);
-            ImageHashii.put(CarolliaPerspicillata.getNombre(), ICarolliaPerspicillata);
-            ImageHashii.put(ArtibeusObscurus.getNombre(), IArtibeusObscurus);
+        ImageHashii.put(MimomCrenulatum.getNombre(), IMimomCrenulatum);
+        ImageHashii.put(CarolliaBrevicauda.getNombre(), ICarolliaBrevicauda);
+        ImageHashii.put(CarolliaCastanea.getNombre(), ICarolliaCastanea);
+        ImageHashii.put(CarolliaPerspicillata.getNombre(), ICarolliaPerspicillata);
+        ImageHashii.put(ArtibeusObscurus.getNombre(), IArtibeusObscurus);
         ImageHashii.put(ArtibeusAuquatorialis.getNombre(), IArtibeusAuquatorialis);
-            ImageHashii.put(ArtibeusPlanirostris.getNombre(), IArtibeusPlanirostris);
-            ImageHashii.put(ArtibeusLituratus.getNombre(), IArtibeusLituratus);
-            ImageHashii.put(DermanuraAnderseni.getNombre(), IDermanuraAnderseni);
-            ImageHashii.put(UrodermaMagnirostrum.getNombre(), IUrodermaMagnirostrum);
-                  ImageHashii.put(UrodermaBilobatum.getNombre(), IUrodermaBilobatum);
-                    ImageHashii.put(MesophyllaMacconelli.getNombre(), IMesophyllaMacconelli);
-                      ImageHashii.put(PlatyrrhinusBranchycephalus.getNombre(), IPlatyrrhinusBranchycephalus);
-                        ImageHashii.put(PlatyrrhinusHelleri.getNombre(), IPlatyrrhinusHelleri);
-                          ImageHashii.put(PlatyrhinusInfuscus.getNombre(), IPlatyrhinusInfuscus);
-                          
-            
-            
-            
-            
+        ImageHashii.put(ArtibeusPlanirostris.getNombre(), IArtibeusPlanirostris);
+        ImageHashii.put(ArtibeusLituratus.getNombre(), IArtibeusLituratus);
+        ImageHashii.put(DermanuraAnderseni.getNombre(), IDermanuraAnderseni);
+        ImageHashii.put(UrodermaMagnirostrum.getNombre(), IUrodermaMagnirostrum);
+        ImageHashii.put(UrodermaBilobatum.getNombre(), IUrodermaBilobatum);
+        ImageHashii.put(MesophyllaMacconelli.getNombre(), IMesophyllaMacconelli);
+        ImageHashii.put(PlatyrrhinusBranchycephalus.getNombre(), IPlatyrrhinusBranchycephalus);
+        ImageHashii.put(PlatyrrhinusHelleri.getNombre(), IPlatyrrhinusHelleri);
+        ImageHashii.put(PlatyrhinusInfuscus.getNombre(), IPlatyrhinusInfuscus);
+        ImageHashii.put(SturniraLilium.getNombre(), ISturniraLilium);
         
-
+        
         //Asociamos las fotos a los respectivos murcielagos
         AsociarImagenes();
 
@@ -667,6 +650,7 @@ public class GUI extends javax.swing.JFrame {
     private void PonerInfo(Murcielago Mumurci) {
         
         Nombre.setText(Mumurci.getNombre());
+        Familia.setText(Mumurci.getClass().getSimpleName());
         Alimentación.setText(Mumurci.getAlimentacion());
     }
 
