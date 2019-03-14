@@ -8,11 +8,13 @@ import data.Vespertilionidae;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class GUI extends javax.swing.JFrame {
@@ -22,7 +24,8 @@ public class GUI extends javax.swing.JFrame {
     int Afirmativa[]=new int[]{0,2,0,0,7,19,28,8,9,0,0,14,0,0,0,0,0,0,0,0,0,0,0,26,0,0,27,0,0,0,0,0};
     int Negativa[]=new int[]{0,6,3,4,5,21,29,11,10,12,0,15,13,0,0,16,17,18,0,20,0,22,23,24,25,0,0,0,0,30,31,0};
     int valorPregunta;
-    ImageIcon Preview;
+    Boolean FotoSubida=false;
+    
 
     //Importamos las imágenes del menu desde la carpeta
     ImageIcon icon1 = new ImageIcon(
@@ -44,7 +47,7 @@ public class GUI extends javax.swing.JFrame {
             this.getClass().getResource("/UI/Resources/Encontrar.png"));
 
     Image Fotito = icon4.getImage();
-
+    ImageIcon Preview;
     //Creamos los diccionarios de murcielagos y fotos respectivamente
     HashMap<String, Murcielago> MurciHashii = new HashMap<>();
     HashMap<String, ImageIcon> ImageHashii = new HashMap<>();
@@ -924,7 +927,8 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_preguntaNMouseClicked
 
     private void SubirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubirMouseClicked
-       int seleccion;
+       
+        int seleccion;
        JFileChooser Escoger=new JFileChooser();
         seleccion =Escoger.showOpenDialog(this);
         if (seleccion == JFileChooser.APPROVE_OPTION){
@@ -938,6 +942,7 @@ public class GUI extends javax.swing.JFrame {
             Preview = new ImageIcon(Location);
             
             Agregar.setIcon(Preview);
+            FotoSubida=true;
            // EnviarImagen(Preview);
             }
             catch(Exception NoesImagen){
@@ -951,15 +956,23 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SubirMouseClicked
 
     private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
+       if(FotoSubida){
        String Nombre,Familia,alimentacion;
        Nombre=name.getText();
        Familia=family.getText();
        alimentacion=feeding.getText();
        ImageIcon Fotillo=Preview;
-       
        Murcielago TempMurci = new Murcielago(Preview,Nombre,alimentacion);
        MurciHashii.put(Nombre, TempMurci);
+       ImageHashii.put(Nombre, Preview);
        Lista.setModel(DefineModel());
+       FotoSubida=false;
+       }
+//catch(){
+         //  System.out.println("No hay imagen");
+          // JOptionPane.showInputDialog("Seleccione una foto");
+      // }
+    
     }//GEN-LAST:event_CrearMouseClicked
 
     /**
