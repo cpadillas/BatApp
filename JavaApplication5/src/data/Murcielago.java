@@ -27,6 +27,11 @@ public class Murcielago {
    
     }
 
+    public Murcielago() {
+    }
+    
+    
+
     public Murcielago(String nombre, String alimentacion, Boolean hojaNasal, Boolean colaLibre, Boolean bolsasProtopatagio, Boolean falangeTercerDedo) {
         this.nombre = nombre;
         this.alimentacion = alimentacion;

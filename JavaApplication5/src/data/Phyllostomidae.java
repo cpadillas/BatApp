@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  * @author crist
  */
 public class Phyllostomidae extends Murcielago{
-    Boolean hocicoLargoYAngost;
+    Boolean hocicoLargoYAngosto;
     Boolean trianguloHoja;
     Boolean surcoProfundo;
     Boolean lenguaLarga;
@@ -62,7 +62,7 @@ public class Phyllostomidae extends Murcielago{
             Boolean incisivosInferioresTrilobulados, Boolean incisivosMediosBifidos, int cuspidesAccesorias, 
             String nombre, String alimentacion, Boolean hojaNasal) {
         super(nombre, alimentacion, hojaNasal);
-        this.hocicoLargoYAngost = hocicoLargoYAngost;
+        this.hocicoLargoYAngosto = hocicoLargoYAngost;
         this.trianguloHoja = trianguloHoja;
         this.surcoProfundo = surcoProfundo;
         this.lenguaLarga = lenguaLarga;
@@ -156,5 +156,155 @@ public class Phyllostomidae extends Murcielago{
     public void setFalangeTercerDedo(Boolean falangeTercerDedo) {
         this.falangeTercerDedo = falangeTercerDedo;
     }
+
+    public Boolean getHocicoLargoYAngosto() {
+        return hocicoLargoYAngosto;
+    }
+
+    public Boolean getTrianguloHoja() {
+        return trianguloHoja;
+    }
+
+    public Boolean getSurcoProfundo() {
+        return surcoProfundo;
+    }
+
+    public Boolean getLenguaLarga() {
+        return lenguaLarga;
+    }
+
+    public Boolean getPolexDesarrollado() {
+        return polexDesarrollado;
+    }
+
+    public Boolean getCola() {
+        return cola;
+    }
+
+    public Boolean getUropatagioDesarrollado() {
+        return uropatagioDesarrollado;
+    }
+
+    public Boolean getHocicoRedondeado() {
+        return hocicoRedondeado;
+    }
+
+    public Boolean getLineasDorsales() {
+        return lineasDorsales;
+    }
+
+    public Boolean getLineasFaciales() {
+        return lineasFaciales;
+    }
+
+    public Boolean getPremolaresInferiores() {
+        return premolaresInferiores;
+    }
+
+    public Boolean getMembranaLateral() {
+        return membranaLateral;
+    }
+
+    public Boolean getLargoCalcar() {
+        return largoCalcar;
+    }
+
+    public Boolean getLargoOreja() {
+        return largoOreja;
+    }
+
+    public Boolean getCrestaSagital() {
+        return crestaSagital;
+    }
+
+    public Boolean getPrimerIncisivo() {
+        return primerIncisivo;
+    }
+
+    public Boolean getProtuberanciaLabioYMenton() {
+        return protuberanciaLabioYMenton;
+    }
+
+    public Boolean getSierraFinaHojaNasal() {
+        return sierraFinaHojaNasal;
+    }
+
+    public Boolean getColaLarga() {
+        return colaLarga;
+    }
+
+    public Boolean getDosIncisivosInferiores() {
+        return dosIncisivosInferiores;
+    }
+
+    public Boolean getVerrugasBarbilla() {
+        return verrugasBarbilla;
+    }
+
+    public char getTamañoOrejas() {
+        return tamañoOrejas;
+    }
+
+    public char getTamañoHojaNasal() {
+        return tamañoHojaNasal;
+    }
+
+    public Boolean getPremolarInferiorDoblePrimerMolar() {
+        return premolarInferiorDoblePrimerMolar;
+    }
+
+    public Boolean getIgualdadIncisivosExterInter() {
+        return igualdadIncisivosExterInter;
+    }
+
+    public Boolean getEntradaMuescaMandibular() {
+        return entradaMuescaMandibular;
+    }
+
+    public Boolean getMolaresSuperiores() {
+        return molaresSuperiores;
+    }
+
+    public Boolean getMolaresInferiores() {
+        return molaresInferiores;
+    }
+
+    public Boolean getPrepostOrbitalesDesarrollados() {
+        return prepostOrbitalesDesarrollados;
+    }
+
+    public Boolean getPelajeMoteado() {
+        return pelajeMoteado;
+    }
+
+    public Boolean getTodosIncisivosBilobados() {
+        return todosIncisivosBilobados;
+    }
+
+    public Boolean getIgualdadIncisivosSuperiores() {
+        return igualdadIncisivosSuperiores;
+    }
+
+    public Boolean getCraneoRecto() {
+        return craneoRecto;
+    }
+
+    public Boolean getDepresionRostro() {
+        return depresionRostro;
+    }
+
+    public Boolean getIncisivosInferioresTrilobulados() {
+        return incisivosInferioresTrilobulados;
+    }
+
+    public Boolean getIncisivosMediosBifidos() {
+        return incisivosMediosBifidos;
+    }
+
+    public int getCuspidesAccesorias() {
+        return cuspidesAccesorias;
+    }
+    
+    
 
 }
