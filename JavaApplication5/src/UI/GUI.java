@@ -429,7 +429,8 @@ public class GUI extends javax.swing.JFrame {
                         + " dedo", seisA, seisN);
         Pregunta pregunta7 = new Pregunta(7, "Incisivos superiores centrales oblicuos y de diferente forma que los extremos", 
                 "Incisivos superiores centrales rectos y no muy diferentes en forma que los extremos", sieteA, sieteN);
-        Pregunta pregunta8 = new Pregunta(8, "Hoja nasal presente", "Hoja nasal ausente", ochoA, ochoN);
+        Pregunta pregunta8 = new Pregunta(8, "Con líneas blancas faciales y con o sin línea dorsal", "Sin líneas blancas faciales "
+                + "ni dorsales", ochoA, ochoN);
         Pregunta pregunta9 = new Pregunta(9, "Hoja nasal presente", "Hoja nasal ausente", nueveA, nueveN);
         Pregunta pregunta10 = new Pregunta(10, "Hoja nasal presente", "Hoja nasal ausente", diezA, diezN);
         Pregunta pregunta11 = new Pregunta(11, "Hoja nasal presente", "Hoja nasal ausente", onceA, onceN);
