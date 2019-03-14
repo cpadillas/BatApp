@@ -12,6 +12,10 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 
 public class GUI extends javax.swing.JFrame {
+    
+    int Afirmativa[]=new int[]{0,2,0,0,7,19,28,8,9,0,0,14,0,0,0,0,0,0,0,0,0,0,0,26,0,0,27,0,0,0,0,0};
+    int Negativa[]=new int[]{0,6,3,4,5,21,29,11,10,12,0,15,13,0,0,16,17,18,0,20,0,22,23,24,25,0,0,0,0,30,31,0};
+    int valorPregunta;
 
     //Importamos las imágenes del menu desde la carpeta
     ImageIcon icon1 = new ImageIcon(
@@ -306,109 +310,109 @@ public class GUI extends javax.swing.JFrame {
         ImageIcon cincoN = new ImageIcon(
                 this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
         ImageIcon seisA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/6A.png"));
         ImageIcon seisN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/6N.png"));
         ImageIcon sieteA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/7A.png"));
         ImageIcon sieteN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/7N.png"));
         ImageIcon ochoA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/8A.png"));
         ImageIcon ochoN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/8N.png"));
         ImageIcon nueveA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/9A.png"));
         ImageIcon nueveN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/9N.png"));
         ImageIcon diezA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/10A.png"));
         ImageIcon diezN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/10N.png"));
         ImageIcon onceA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/11A.png"));
         ImageIcon onceN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/11N.png"));
         ImageIcon doceA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/12A.png"));
         ImageIcon doceN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/12N.png"));
         ImageIcon treceA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/13A.png"));
         ImageIcon treceN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/13N.png"));
         ImageIcon catorceA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/14A.png"));
         ImageIcon catorceN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/14N.png"));
         ImageIcon quinceA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/15A.png"));
         ImageIcon quinceN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/15N.png"));
         ImageIcon dieciseisA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/16A.png"));
         ImageIcon dieciseisN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/16N.png"));
         ImageIcon diecisieteA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/17A.png"));
         ImageIcon diecisieteN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/17N.png"));
         ImageIcon dieciochoA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/18A.png"));
         ImageIcon dieciochoN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/18N.png"));
         ImageIcon diecinueveA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/19A.png"));
         ImageIcon diecinueveN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/19N.png"));
         ImageIcon veinteA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/20A.png"));
         ImageIcon veinteN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/20N.png"));
         ImageIcon veintiunoA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/21A.png"));
         ImageIcon veintiunoN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/21N.png"));
         ImageIcon veintidosA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/22A.png"));
         ImageIcon veintidosN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/22N.png"));
         ImageIcon veintitresA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/23A.png"));
         ImageIcon veintitresN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/23N.png"));
         ImageIcon veinticuatroA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/24A.png"));
         ImageIcon veinticuatroN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/24N.png"));
         ImageIcon veinticincoA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/25A.png"));
         ImageIcon veinticincoN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/25N.png"));
         ImageIcon veintiseisA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/26A.png"));
         ImageIcon veintiseisN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/26N.png"));
         ImageIcon veintisieteA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/27A.png"));
         ImageIcon veintisieteN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/27N.png"));
         ImageIcon veintiochoA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/28A.png"));
         ImageIcon veintiochoN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/28N.png"));
         ImageIcon veintinueveA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/29A.png"));
         ImageIcon veintinueveN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/29N.png"));
         ImageIcon treintaA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/30A.png"));
         ImageIcon treintaN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/30N.png"));
         ImageIcon treintaunoA = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/31N.png"));
         ImageIcon treintaunoN = new ImageIcon(
-                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+                this.getClass().getResource("/UI/Resources/Preguntas/31N.png"));
         
         //Inicializar el banco de preguntas
         
@@ -431,29 +435,92 @@ public class GUI extends javax.swing.JFrame {
                 "Incisivos superiores centrales rectos y no muy diferentes en forma que los extremos", sieteA, sieteN);
         Pregunta pregunta8 = new Pregunta(8, "Con líneas blancas faciales y con o sin línea dorsal", "Sin líneas blancas faciales "
                 + "ni dorsales", ochoA, ochoN);
-        Pregunta pregunta9 = new Pregunta(9, "Hoja nasal presente", "Hoja nasal ausente", nueveA, nueveN);
-        Pregunta pregunta10 = new Pregunta(10, "Hoja nasal presente", "Hoja nasal ausente", diezA, diezN);
-        Pregunta pregunta11 = new Pregunta(11, "Hoja nasal presente", "Hoja nasal ausente", onceA, onceN);
-        Pregunta pregunta12 = new Pregunta(12, "Hoja nasal presente", "Hoja nasal ausente", doceA, doceN);
-        Pregunta pregunta13 = new Pregunta(13, "Hoja nasal presente", "Hoja nasal ausente", treceA, treceN);
-        Pregunta pregunta14 = new Pregunta(14, "Hoja nasal presente", "Hoja nasal ausente", catorceA, catorceN);
-        Pregunta pregunta15 = new Pregunta(15, "Hoja nasal presente", "Hoja nasal ausente", quinceA, quinceN);
-        Pregunta pregunta16 = new Pregunta(16, "Hoja nasal presente", "Hoja nasal ausente", dieciseisA, dieciseisN);
-        Pregunta pregunta17 = new Pregunta(17, "Hoja nasal presente", "Hoja nasal ausente", diecisieteA, diecisieteN);
-        Pregunta pregunta18 = new Pregunta(18, "Hoja nasal presente", "Hoja nasal ausente", dieciochoA, dieciochoN);
-        Pregunta pregunta19 = new Pregunta(19, "Hoja nasal presente", "Hoja nasal ausente", diecinueveA, diecinueveN);
-        Pregunta pregunta20 = new Pregunta(20, "Hoja nasal presente", "Hoja nasal ausente", veinteA, veinteN);
-        Pregunta pregunta21 = new Pregunta(21, "Hoja nasal presente", "Hoja nasal ausente", veintiunoA, veintiunoN);
-        Pregunta pregunta22 = new Pregunta(22, "Hoja nasal presente", "Hoja nasal ausente", veintidosA, veintidosN);
-        Pregunta pregunta23 = new Pregunta(23, "Hoja nasal presente", "Hoja nasal ausente", veintitresA, veintitresN);
-        Pregunta pregunta24 = new Pregunta(24, "Hoja nasal presente", "Hoja nasal ausente", veinticuatroA, veinticuatroN);
-        Pregunta pregunta25 = new Pregunta(25, "Hoja nasal presente", "Hoja nasal ausente", veinticincoA, veinticincoN);
+        Pregunta pregunta9 = new Pregunta(9, "Incisivos medios superiores delgados y bífidos", "Incisivos medios superiores grandes"
+                + " y no bífidos", nueveA, nueveN);
+        Pregunta pregunta10 = new Pregunta(10, "Molares 2/3; AB 28,5 – 32,3 mm", "Molares 3/3; AB 39 – 60 mm", diezA, diezN);
+        Pregunta pregunta11 = new Pregunta(11, "Todos los incisivos superiores bilobados y líneas faciales blancas conspicuas", 
+                "Incisivos superiores centrales  bilobados o lisos, con líneas faciales blancas poco conspicuas", onceA, onceN);
+        Pregunta pregunta12 = new Pregunta(12, "Pelaje marrón negruzco, largo del cráneo más de 24 mm, incisivos convergentes, "
+                + "líneas faciales no conspicuas", "Pelaje marrón claro largo del cráneo menor a 24 mm, incisivos poco convergentes, "
+                        + "líneas faciales conspicuas", doceA, doceN);
+        Pregunta pregunta13 = new Pregunta(13, "Con dos cúspides accesorias definidas en el margen anterior del segundo molar inferior, "
+                + "rostro amplio y corto", "Con una cúspide accesorias definidas en el margen anterior del segundo molar inferior, rostro "
+                        + "amplio y corto", treceA, treceN);
+        Pregunta pregunta14 = new Pregunta(14, "Franjas faciales anchas, perfil dorsal del cráneo con una pequeña depresión en el rostro",
+                "Franjas faciales reducidas o ausentes, perfil del cráneo recto y sin la depresión rostral", catorceA, catorceN);
+        Pregunta pregunta15 = new Pregunta(15, "De pequeño tamaño, AB menor a 45 mm", "De mediano a gran tamaño, AB mayor a 45 mm",
+                quinceA, quinceN);
+        Pregunta pregunta16 = new Pregunta(16, "Procesos preorbitales y postorbitales muy desarrollados, molares 2/3. Pelaje ventral "
+                + "uniformemente coloreado", "Procesos pre y postorbitales poco desarrollados, molares 2/2 o 2/3. Pelaje ventral moteado",
+                dieciseisA, dieciseisN);
+        Pregunta pregunta17 = new Pregunta(17, "AB 70-72 mm", "AB menor a 70 mm ", diecisieteA, diecisieteN);
+        Pregunta pregunta18 = new Pregunta(18, "AB mayor a 63 mm", "AB menor a 63 mm", dieciochoA, dieciochoN);
+        Pregunta pregunta19 = new Pregunta(19, "hilera dental superior sin entrada o muesca en el perfil labial mandibular", "hilera "
+                + "dental superior con entrada o muesca en el perfil labial mandibular", diecinueveA, diecinueveN);
+        Pregunta pregunta20 = new Pregunta(20, "Segundo premolar inferior casi el doble de la altura del primer molar, hocico alargado",
+                "Segundo premolar inferior ligeramente más alto que el primer molar, hocico corto", veinteA, veinteN);
+        Pregunta pregunta21 = new Pregunta(21, "Incisivos 2/1", "Incisivos 2/2 o 1/2", veintiunoA, veintiunoN);
+        Pregunta pregunta22 = new Pregunta(22, "Cola larga incluida en el uropatagio hasta el margen posterior", "Cola corta incluida en "
+                + "el uropatagio hasta menos del margen posterior ", veintidosA, veintidosN);
+        Pregunta pregunta23 = new Pregunta(23, "Dos premolares inferiores", "Tres premolares inferiores", veintitresA, veintitresN);
+        Pregunta pregunta24 = new Pregunta(24, "Protuberancias presentes en labios y mentón, margen de la hoja nasal finamente aserrada",
+                "Protuberancias ausentes en labios y mentón,  margen de la hoja nasal no aserrada", veinticuatroA, veinticuatroN);
+        Pregunta pregunta25 = new Pregunta(25, "Largo de la oreja (desde la muesca) menor a 16 mm, calcar del mismo tamaño al pie, incisivos"
+                + " superiores con forma de cincel y en línea con los caninos", "Largo de la oreja (desde la muesca) mayor a 16 mm, calcar de"
+                        + " menor tamaño al pie, incisivos superiores sin forma de cincel y no alineados con los caninos", 
+                veinticincoA, veinticincoN);
+        Pregunta pregunta26 = new Pregunta(26, "Largo del calcar igual o mayor al largo del pie, largo de la oreja (desde la muesca) mayor a "
+                + "25 mm, cresta sagital desarrollada, primer incisivo superior e inferior más altos que anchos", "Largo del calcar menor al "
+                        + "largo del pie, largo de la oreja (desde la muesca) menor a 25 mm, cresta sagital ausente o poco desarrollada, "
+                        + "primer incisivo superior e inferior más anchos que largos", veintiseisA, veintiseisN);
+        Pregunta pregunta27 = new Pregunta(27, "Antebrazo menor a 75 mm, membrana alar anclada a los tobillos, la mayor longitud del cráneo es "
+                + "menor a 35 mm", "Antebrazo mayor a 75 mm, membrana alar anclada lateralmente al pie, la mayor longitud del cráneo es mayor a "
+                        + "35 mm", veintisieteA, veintisieteN);
+        Pregunta pregunta28 = new Pregunta(28, "Incisivos superiores externos menos de la mitad de los internos, premolares 1/2", 
+                "Incisivos superiores casi del mismo tamaño, premolares 3/3", veintiochoA, veintiochoN);
+        Pregunta pregunta29 = new Pregunta(29, "Líneas dorsales blanquecinas ausentes", "Líneas dorsales blanquecinas presentes", 
+                veintinueveA, veintinueveN);
+        Pregunta pregunta30 = new Pregunta(30, "Sin saco glandular", "Con saco glandular", treintaA, treintaN);
+        Pregunta pregunta31 = new Pregunta(31, "AB 45 – 53 mm", "AB menor a 44 mm", treintaunoA, treintaunoN);
+        
+        
         
         
         
         
         bancoPreguntas.put(pregunta1.getNumero(), pregunta1);
         bancoPreguntas.put(pregunta2.getNumero(), pregunta2);
+        bancoPreguntas.put(pregunta3.getNumero(), pregunta3);
+        bancoPreguntas.put(pregunta4.getNumero(), pregunta4);
+        bancoPreguntas.put(pregunta5.getNumero(), pregunta5);
+        bancoPreguntas.put(pregunta6.getNumero(), pregunta6);
+        bancoPreguntas.put(pregunta7.getNumero(), pregunta7);
+        bancoPreguntas.put(pregunta8.getNumero(), pregunta8);
+        bancoPreguntas.put(pregunta9.getNumero(), pregunta9);
+        bancoPreguntas.put(pregunta10.getNumero(), pregunta10);
+        bancoPreguntas.put(pregunta11.getNumero(), pregunta11);
+        bancoPreguntas.put(pregunta12.getNumero(), pregunta12);
+        bancoPreguntas.put(pregunta13.getNumero(), pregunta13);
+        bancoPreguntas.put(pregunta14.getNumero(), pregunta14);
+        bancoPreguntas.put(pregunta15.getNumero(), pregunta15);
+        bancoPreguntas.put(pregunta16.getNumero(), pregunta16);
+        bancoPreguntas.put(pregunta17.getNumero(), pregunta17);
+        bancoPreguntas.put(pregunta18.getNumero(), pregunta18);
+        bancoPreguntas.put(pregunta19.getNumero(), pregunta19);
+        bancoPreguntas.put(pregunta20.getNumero(), pregunta20);
+        bancoPreguntas.put(pregunta21.getNumero(), pregunta21);
+        bancoPreguntas.put(pregunta22.getNumero(), pregunta22);
+        bancoPreguntas.put(pregunta23.getNumero(), pregunta23);
+        bancoPreguntas.put(pregunta24.getNumero(), pregunta24);
+        bancoPreguntas.put(pregunta25.getNumero(), pregunta25);
+        bancoPreguntas.put(pregunta26.getNumero(), pregunta26);
+        bancoPreguntas.put(pregunta27.getNumero(), pregunta27);
+        bancoPreguntas.put(pregunta28.getNumero(), pregunta28);
+        bancoPreguntas.put(pregunta29.getNumero(), pregunta29);
+        bancoPreguntas.put(pregunta30.getNumero(), pregunta30);
+        bancoPreguntas.put(pregunta31.getNumero(), pregunta31);
+        
+        
         
         
         //Asociamos las fotos a los respectivos murcielagos
@@ -609,11 +676,33 @@ public class GUI extends javax.swing.JFrame {
 
         Ventana.addTab("Banco de Murciélagos", Añadir);
 
+        ImagenA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenAMouseClicked(evt);
+            }
+        });
+
+        ImagenN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenNMouseClicked(evt);
+            }
+        });
+
         preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preguntaN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                preguntaNMouseClicked(evt);
+            }
+        });
 
         preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preguntaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                preguntaAMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
         Banco.setLayout(BancoLayout);
@@ -784,22 +873,38 @@ public class GUI extends javax.swing.JFrame {
 
     private void VentanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaMouseClicked
         // TODO add your handling code here:
-        Pregunta x= bancoPreguntas.get(1);
-        int altura = x.getAfirmativo().getIconHeight();
-        int ancho = x.getAfirmativo().getIconWidth();
-        ImagenA.setSize(ancho, altura);
-        ImagenA.setIcon(x.getAfirmativo());
-        altura = x.getNegativo().getIconHeight();
-        ancho = x.getNegativo().getIconWidth();
-        ImagenN.setSize(ancho, altura);
-        ImagenN.setIcon(x.getNegativo());
-        preguntaA.setText(x.getPreguntaA());
-        preguntaN.setText(x.getPreguntaN());
+        valorPregunta=1;
+        llenar();
     }//GEN-LAST:event_VentanaMouseClicked
+
+    private void ImagenAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAMouseClicked
+        // TODO add your handling code here:
+        valorPregunta=Afirmativa[valorPregunta];
+        llenar();
+    }//GEN-LAST:event_ImagenAMouseClicked
+
+    private void preguntaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preguntaAMouseClicked
+        // TODO add your handling code here:
+        valorPregunta=Afirmativa[valorPregunta];
+        llenar();
+    }//GEN-LAST:event_preguntaAMouseClicked
+
+    private void ImagenNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenNMouseClicked
+        // TODO add your handling code here:
+        valorPregunta=Negativa[valorPregunta];
+        llenar();
+    }//GEN-LAST:event_ImagenNMouseClicked
+
+    private void preguntaNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preguntaNMouseClicked
+        // TODO add your handling code here:
+        valorPregunta=Negativa[valorPregunta];
+        llenar();
+    }//GEN-LAST:event_preguntaNMouseClicked
 
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -831,6 +936,19 @@ public class GUI extends javax.swing.JFrame {
 
     }
     
+    public void llenar(){
+        Pregunta x= bancoPreguntas.get(valorPregunta);
+        int altura = x.getAfirmativo().getIconHeight();
+        int ancho = x.getAfirmativo().getIconWidth();
+        ImagenA.setSize(ancho, altura);
+        ImagenA.setIcon(x.getAfirmativo());
+        altura = x.getNegativo().getIconHeight();
+        ancho = x.getNegativo().getIconWidth();
+        ImagenN.setSize(ancho, altura);
+        ImagenN.setIcon(x.getNegativo());
+        preguntaA.setText(x.getPreguntaA());
+        preguntaN.setText(x.getPreguntaN());
+    }
     public void Interfazpregunta(ImageIcon fotito){
         int altura = fotito.getIconHeight();
         int ancho = fotito.getIconWidth();
