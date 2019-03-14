@@ -111,7 +111,6 @@
                           <Component id="Alimentación" alignment="0" pref="206" max="32767" attributes="0"/>
                           <Component id="Foto" max="32767" attributes="0"/>
                       </Group>
-
                       <EmptySpace min="0" pref="491" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -235,21 +234,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="361" max="-2" attributes="0"/>
+                              <Component id="cantidad" min="-2" pref="74" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="ImagenA" pref="250" max="32767" attributes="0"/>
-                                  <Component id="preguntaA" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
+                                  <Component id="ImagenA" min="-2" pref="250" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="ImagenN" pref="250" max="32767" attributes="0"/>
-                                  <Component id="preguntaN" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane3" max="32767" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="361" max="-2" attributes="0"/>
-                              <Component id="cantidad" min="-2" pref="74" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="859" max="32767" attributes="0"/>
@@ -258,20 +257,22 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="cantidad" min="-2" pref="26" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="ImagenN" min="-2" pref="260" max="-2" attributes="0"/>
-                          <Component id="ImagenA" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="cantidad" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="ImagenN" min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="ImagenA" min="-2" pref="260" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="preguntaN" min="-2" pref="74" max="-2" attributes="0"/>
-                          <Component id="preguntaA" min="-2" pref="74" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="198" max="32767" attributes="0"/>
+                      <EmptySpace pref="176" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -287,26 +288,39 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ImagenNMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="preguntaN">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="preguntaNMouseClicked"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="preguntaA">
-              <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="preguntaAMouseClicked"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="cantidad">
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="preguntaA">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="preguntaN">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Identificar">

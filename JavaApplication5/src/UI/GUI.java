@@ -25,6 +25,7 @@ public class GUI extends javax.swing.JFrame {
     int Afirmativa[]=new int[]{0,2,0,0,7,19,28,8,9,0,0,14,0,0,0,0,0,0,0,0,0,0,0,26,0,0,27,0,0,0,0,0};
     int Negativa[]=new int[]{0,6,3,4,5,21,29,11,10,12,0,15,13,0,0,16,17,18,0,20,0,22,23,24,25,0,0,0,0,30,31,0};
     int valorPregunta;
+    ImageIcon Preview;
 
     //Importamos las imágenes del menu desde la carpeta
     ImageIcon icon1 = new ImageIcon(
@@ -586,9 +587,11 @@ public class GUI extends javax.swing.JFrame {
         Banco = new javax.swing.JPanel();
         ImagenA = new javax.swing.JLabel();
         ImagenN = new javax.swing.JLabel();
-        preguntaN = new javax.swing.JLabel();
-        preguntaA = new javax.swing.JLabel();
         cantidad = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        preguntaA = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        preguntaN = new javax.swing.JTextArea();
         Identificar = new javax.swing.JPanel();
         Agregar = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
@@ -659,7 +662,6 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 509, Short.MAX_VALUE)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -710,57 +712,50 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preguntaN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                preguntaNMouseClicked(evt);
-            }
-        });
+        preguntaA.setEditable(false);
+        preguntaA.setColumns(20);
+        preguntaA.setRows(5);
+        jScrollPane2.setViewportView(preguntaA);
 
-        preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preguntaA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                preguntaAMouseClicked(evt);
-            }
-        });
+        preguntaN.setColumns(20);
+        preguntaN.setRows(5);
+        jScrollPane3.setViewportView(preguntaN);
 
         javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
         Banco.setLayout(BancoLayout);
         BancoLayout.setHorizontalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BancoLayout.createSequentialGroup()
-
                 .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(BancoLayout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(preguntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2)
+                            .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(118, 118, 118)
                         .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(BancoLayout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(158, Short.MAX_VALUE))
+                            .addComponent(jScrollPane3))))
+                .addContainerGap(859, Short.MAX_VALUE))
         );
         BancoLayout.setVerticalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BancoLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
                 .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(preguntaN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(preguntaA, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(198, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Identificar un murciélago", Banco);
@@ -925,28 +920,18 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         descartar();
         valorPregunta=Afirmativa[valorPregunta];
-        
         if(valorPregunta!=0)
             llenar();
     }//GEN-LAST:event_ImagenAMouseClicked
 
-    private void preguntaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preguntaAMouseClicked
-        // TODO add your handling code here:
-        valorPregunta=Afirmativa[valorPregunta];
-        llenar();
-    }//GEN-LAST:event_preguntaAMouseClicked
-
     private void ImagenNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenNMouseClicked
         // TODO add your handling code here:
+        
+        descartar();
         valorPregunta=Negativa[valorPregunta];
-        llenar();
+        if(valorPregunta!=0)
+            llenar();
     }//GEN-LAST:event_ImagenNMouseClicked
-
-    private void preguntaNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preguntaNMouseClicked
-        // TODO add your handling code here:
-        valorPregunta=Negativa[valorPregunta];
-        llenar();
-    }//GEN-LAST:event_preguntaNMouseClicked
 
     private void SubirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubirMouseClicked
        int seleccion;
@@ -1330,9 +1315,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField name;
-    private javax.swing.JLabel preguntaA;
-    private javax.swing.JLabel preguntaN;
+    private javax.swing.JTextArea preguntaA;
+    private javax.swing.JTextArea preguntaN;
     // End of variables declaration//GEN-END:variables
 
     
