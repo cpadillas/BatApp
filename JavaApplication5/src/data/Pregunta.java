@@ -17,6 +17,7 @@ public class Pregunta {
     String PreguntaN;
     ImageIcon Afirmativo;
     ImageIcon Negativo;
+    String atributo;
 
     public Pregunta(int numero, String PreguntaA, String PreguntaN, ImageIcon Afirmativo, ImageIcon Negativo) {
         this.numero = numero;
@@ -64,6 +65,10 @@ public class Pregunta {
 
     public void setNegativo(ImageIcon Negativo) {
         this.Negativo = Negativo;
+    }
+
+    public String getAtributo() {
+        return atributo;
     }
     
     

@@ -6,8 +6,11 @@ import data.Phyllostomidae;
 import data.Pregunta;
 import data.Vespertilionidae;
 import java.awt.Image;
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 
@@ -16,6 +19,10 @@ public class GUI extends javax.swing.JFrame {
     int Afirmativa[]=new int[]{0,2,0,0,7,19,28,8,9,0,0,14,0,0,0,0,0,0,0,0,0,0,0,26,0,0,27,0,0,0,0,0};
     int Negativa[]=new int[]{0,6,3,4,5,21,29,11,10,12,0,15,13,0,0,16,17,18,0,20,0,22,23,24,25,0,0,0,0,30,31,0};
     int valorPregunta;
+    Field atributo;
+    
+    
+    
 
     //Importamos las imágenes del menu desde la carpeta
     ImageIcon icon1 = new ImageIcon(
@@ -40,10 +47,16 @@ public class GUI extends javax.swing.JFrame {
 
     //Creamos los diccionarios de murcielagos y fotos respectivamente
     HashMap<String, Murcielago> MurciHashii = new HashMap<>();
+    HashMap<String, Emballonuridae> EmballonuridaeHashii = new HashMap<>();
+    HashMap<String, Phyllostomidae> PhyllostomidaeHashii = new HashMap<>();
+    HashMap<String, Vespertilionidae> VespertilionidaeHashii = new HashMap<>();
     HashMap<String, ImageIcon> ImageHashii = new HashMap<>();
     HashMap<Integer, Pregunta> bancoPreguntas = new HashMap<>();
+    HashMap<String, Murcielago> MurciVariable = new HashMap<>();
+    
 
     public GUI() {
+
         
         //Instancioamos los murciélagos con todos sus atributos
         Vespertilionidae MyotisRiparius = new Vespertilionidae(true, 1, 2, "Myotis Riparius",
@@ -219,40 +232,44 @@ public class GUI extends javax.swing.JFrame {
                 this.getClass().getResource("/UI/Resources/Retratos/Sturnira lilium.png"));
         
         //Rellenamos los diccionarios
-        MurciHashii.put(Vampyressa.getNombre(), Vampyressa);
-        MurciHashii.put(GlossophagaSoricina.getNombre(), GlossophagaSoricina);
-        MurciHashii.put(DesmodusRotundus.getNombre(), DesmodusRotundus);
-        MurciHashii.put(MyotisRiparius.getNombre(), MyotisRiparius);
-        MurciHashii.put(EptesicusBrasiliensis.getNombre(), EptesicusBrasiliensis);
-        MurciHashii.put(SaccopteryxLeptura.getNombre(), SaccopteryxLeptura);
-        MurciHashii.put(SaccopteryxBilienata.getNombre(), SaccopteryxBilienata);
-        MurciHashii.put(RhynchonycterisNaso.getNombre(), RhynchonycterisNaso);
-        MurciHashii.put(CormuraBrevisrostris.getNombre(), CormuraBrevisrostris);
-        MurciHashii.put(PhyllostomusHastatus.getNombre(), PhyllostomusHastatus);
-        MurciHashii.put(PhyllostomusElongatus.getNombre(), PhyllostomusElongatus);
-        MurciHashii.put(PhyllostomusDiscolor.getNombre(), PhyllostomusDiscolor);
-        MurciHashii.put(TrachopsChirrosus.getNombre(), TrachopsChirrosus);
-        MurciHashii.put(LampronycterisBrachyotis.getNombre(), LampronycterisBrachyotis);
-        MurciHashii.put(TrynycterisNiceforti.getNombre(), TrynycterisNiceforti);
-        MurciHashii.put(LonchorhinaOrinocensis.getNombre(), LonchorhinaOrinocensis);
-        MurciHashii.put(MimomCrenulatum.getNombre(), MimomCrenulatum);
-        MurciHashii.put(CarolliaBrevicauda.getNombre(), CarolliaBrevicauda);
-        MurciHashii.put(CarolliaCastanea.getNombre(), CarolliaCastanea);
-        MurciHashii.put(CarolliaPerspicillata.getNombre(), CarolliaPerspicillata);
-        MurciHashii.put(ArtibeusObscurus.getNombre(), ArtibeusObscurus);
-        MurciHashii.put(ArtibeusAuquatorialis.getNombre(), ArtibeusAuquatorialis);
-        MurciHashii.put(ArtibeusPlanirostris.getNombre(), ArtibeusPlanirostris);
-        MurciHashii.put(ArtibeusLituratus.getNombre(), ArtibeusLituratus);
-        MurciHashii.put(DermanuraAnderseni.getNombre(), DermanuraAnderseni);
-        MurciHashii.put(UrodermaMagnirostrum.getNombre(), UrodermaMagnirostrum);
-        MurciHashii.put(UrodermaBilobatum.getNombre(), UrodermaBilobatum);
-        MurciHashii.put(MesophyllaMacconelli.getNombre(), MesophyllaMacconelli);
-        MurciHashii.put(PlatyrrhinusBranchycephalus.getNombre(), PlatyrrhinusBranchycephalus);
-        MurciHashii.put(PlatyrrhinusHelleri.getNombre(), PlatyrrhinusHelleri);
-        MurciHashii.put(PlatyrhinusInfuscus.getNombre(), PlatyrhinusInfuscus);
-        MurciHashii.put(SturniraLilium.getNombre(), SturniraLilium);
+        PhyllostomidaeHashii.put(Vampyressa.getNombre(), Vampyressa);
+        PhyllostomidaeHashii.put(GlossophagaSoricina.getNombre(), GlossophagaSoricina);
+        PhyllostomidaeHashii.put(DesmodusRotundus.getNombre(), DesmodusRotundus);
+        VespertilionidaeHashii.put(MyotisRiparius.getNombre(), MyotisRiparius);
+        VespertilionidaeHashii.put(EptesicusBrasiliensis.getNombre(), EptesicusBrasiliensis);
+        EmballonuridaeHashii.put(SaccopteryxLeptura.getNombre(), SaccopteryxLeptura);
+        EmballonuridaeHashii.put(SaccopteryxBilienata.getNombre(), SaccopteryxBilienata);
+        EmballonuridaeHashii.put(RhynchonycterisNaso.getNombre(), RhynchonycterisNaso);
+        EmballonuridaeHashii.put(CormuraBrevisrostris.getNombre(), CormuraBrevisrostris);
+        PhyllostomidaeHashii.put(PhyllostomusHastatus.getNombre(), PhyllostomusHastatus);
+        PhyllostomidaeHashii.put(PhyllostomusElongatus.getNombre(), PhyllostomusElongatus);
+        PhyllostomidaeHashii.put(PhyllostomusDiscolor.getNombre(), PhyllostomusDiscolor);
+        PhyllostomidaeHashii.put(TrachopsChirrosus.getNombre(), TrachopsChirrosus);
+        PhyllostomidaeHashii.put(LampronycterisBrachyotis.getNombre(), LampronycterisBrachyotis);
+        PhyllostomidaeHashii.put(TrynycterisNiceforti.getNombre(), TrynycterisNiceforti);
+        PhyllostomidaeHashii.put(LonchorhinaOrinocensis.getNombre(), LonchorhinaOrinocensis);
+        PhyllostomidaeHashii.put(MimomCrenulatum.getNombre(), MimomCrenulatum);
+        PhyllostomidaeHashii.put(CarolliaBrevicauda.getNombre(), CarolliaBrevicauda);
+        PhyllostomidaeHashii.put(CarolliaCastanea.getNombre(), CarolliaCastanea);
+        PhyllostomidaeHashii.put(CarolliaPerspicillata.getNombre(), CarolliaPerspicillata);
+        PhyllostomidaeHashii.put(ArtibeusObscurus.getNombre(), ArtibeusObscurus);
+        PhyllostomidaeHashii.put(ArtibeusAuquatorialis.getNombre(), ArtibeusAuquatorialis);
+        PhyllostomidaeHashii.put(ArtibeusPlanirostris.getNombre(), ArtibeusPlanirostris);
+        PhyllostomidaeHashii.put(ArtibeusLituratus.getNombre(), ArtibeusLituratus);
+        PhyllostomidaeHashii.put(DermanuraAnderseni.getNombre(), DermanuraAnderseni);
+        PhyllostomidaeHashii.put(UrodermaMagnirostrum.getNombre(), UrodermaMagnirostrum);
+        PhyllostomidaeHashii.put(UrodermaBilobatum.getNombre(), UrodermaBilobatum);
+        PhyllostomidaeHashii.put(MesophyllaMacconelli.getNombre(), MesophyllaMacconelli);
+        PhyllostomidaeHashii.put(PlatyrrhinusBranchycephalus.getNombre(), PlatyrrhinusBranchycephalus);
+        PhyllostomidaeHashii.put(PlatyrrhinusHelleri.getNombre(), PlatyrrhinusHelleri);
+        PhyllostomidaeHashii.put(PlatyrhinusInfuscus.getNombre(), PlatyrhinusInfuscus);
+        PhyllostomidaeHashii.put(SturniraLilium.getNombre(), SturniraLilium);
                   
-        
+        MurciHashii.putAll(EmballonuridaeHashii);
+        MurciHashii.putAll(PhyllostomidaeHashii);
+        MurciHashii.putAll(VespertilionidaeHashii);
+        MurciHashii.putAll(EmballonuridaeHashii);
+        MurciHashii.putAll(PhyllostomidaeHashii);
 
         ImageHashii.put(Vampyressa.getNombre(), IVampyressa);
         ImageHashii.put(GlossophagaSoricina.getNombre(), IGlossophagaSoricina);
@@ -564,11 +581,6 @@ public class GUI extends javax.swing.JFrame {
         Familia = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Alimentación = new javax.swing.JLabel();
-        Banco = new javax.swing.JPanel();
-        ImagenA = new javax.swing.JLabel();
-        ImagenN = new javax.swing.JLabel();
-        preguntaN = new javax.swing.JLabel();
-        preguntaA = new javax.swing.JLabel();
         Identificar = new javax.swing.JPanel();
         Agregar = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -578,6 +590,12 @@ public class GUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         Subir = new javax.swing.JButton();
+        Banco = new javax.swing.JPanel();
+        ImagenA = new javax.swing.JLabel();
+        ImagenN = new javax.swing.JLabel();
+        preguntaN = new javax.swing.JLabel();
+        preguntaA = new javax.swing.JLabel();
+        cantidad = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -676,65 +694,6 @@ public class GUI extends javax.swing.JFrame {
 
         Ventana.addTab("Banco de Murciélagos", Añadir);
 
-        ImagenA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImagenAMouseClicked(evt);
-            }
-        });
-
-        ImagenN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImagenNMouseClicked(evt);
-            }
-        });
-
-        preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preguntaN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                preguntaNMouseClicked(evt);
-            }
-        });
-
-        preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preguntaA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                preguntaAMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
-        Banco.setLayout(BancoLayout);
-        BancoLayout.setHorizontalGroup(
-            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BancoLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(preguntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(118, 118, 118)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(158, Short.MAX_VALUE))
-        );
-        BancoLayout.setVerticalGroup(
-            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BancoLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(preguntaN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(preguntaA, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(198, Short.MAX_VALUE))
-        );
-
-        Ventana.addTab("Identificar un murciélago", Banco);
-
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -810,6 +769,72 @@ public class GUI extends javax.swing.JFrame {
 
         Ventana.addTab("Añadir un murciélago", Identificar);
 
+        ImagenA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenAMouseClicked(evt);
+            }
+        });
+
+        ImagenN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImagenNMouseClicked(evt);
+            }
+        });
+
+        preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preguntaN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                preguntaNMouseClicked(evt);
+            }
+        });
+
+        preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preguntaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                preguntaAMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
+        Banco.setLayout(BancoLayout);
+        BancoLayout.setHorizontalGroup(
+            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BancoLayout.createSequentialGroup()
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(preguntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(118, 118, 118)
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(158, Short.MAX_VALUE))
+        );
+        BancoLayout.setVerticalGroup(
+            BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BancoLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(preguntaN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preguntaA, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(198, Short.MAX_VALUE))
+        );
+
+        Ventana.addTab("Identificar un murciélago", Banco);
+
         BatApp.setText("BatApp");
 
         Salir.setText("Salir");
@@ -879,8 +904,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void ImagenAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAMouseClicked
         // TODO add your handling code here:
+        descartar();
         valorPregunta=Afirmativa[valorPregunta];
-        llenar();
+        
+        if(valorPregunta!=0)
+            llenar();
     }//GEN-LAST:event_ImagenAMouseClicked
 
     private void preguntaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preguntaAMouseClicked
@@ -934,6 +962,216 @@ public class GUI extends javax.swing.JFrame {
             new GUI().setVisible(true);
         });
 
+    }
+    
+    public void descartar(){
+        System.out.println("Es la pregunta"+valorPregunta);
+        if(valorPregunta==1){
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==2){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getPolexDesarrollado()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==3){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getHocicoLargoYAngosto()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==4){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getCola()==true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==5){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getVerrugasBarbilla()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==6){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getPolexDesarrollado()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==7){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getIgualdadIncisivosExterInter()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==8){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getLineasFaciales()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==9){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="Vampyressa"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==10){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="MesophyllaMacconelli"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==11){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getTodosIncisivosBilobados()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==12){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getPolexDesarrollado()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==13){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="Platyrrhinus infuscus"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==14){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="Uroderma bilobatum"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==15){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="Dermanura anderseni"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==16){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="Artibeus lituratus"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==17){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getNombre()!="Artibeus planirostris"){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }else if(valorPregunta==18){
+            Set<String> Claves;
+                Claves = PhyllostomidaeHashii.keySet();
+                Claves.forEach((Clave) -> {
+                Phyllostomidae Temp2 = PhyllostomidaeHashii.get(Clave);
+                if(Temp2.getPolexDesarrollado()!=true){
+                    PhyllostomidaeHashii.remove(Clave);
+                }
+            });
+            cantidad.setText("Hay "+PhyllostomidaeHashii.size()+" hasta el momento");
+        }
+        
+    }
+    
+    public void reducirDiccionario(Pregunta preg){
+        
+        Set<String> Claves;
+        Claves = MurciHashii.keySet();
+        Field comp;
+        Object obj;
+        
+        try {
+            Class _class = Class.forName("Emballonuridae");
+            obj = _class.newInstance();
+            Field properties[] = _class.getFields();
+            Claves.forEach((Clave) -> {
+                Murcielago Temp2 = MurciHashii.get(Clave);
+                
+                for (int i = 0; i < properties.length; i++) {
+                    Field field = properties[i];
+                    if(field.getName()==preg.getAtributo()){
+                        
+                    }
+                }
+            });
+            
+            
+        } catch (ClassNotFoundException ex) {
+            
+        } catch (InstantiationException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
     
     public void llenar(){
@@ -1026,6 +1264,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem Salir;
     private javax.swing.JButton Subir;
     private javax.swing.JTabbedPane Ventana;
+    private javax.swing.JLabel cantidad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

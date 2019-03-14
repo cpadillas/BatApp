@@ -25,6 +25,12 @@ public class Emballonuridae extends Murcielago{
         this.sacoGlandular = sacoGlandular;
         this.antebrazo = antebrazo;
     }
+
+    public Emballonuridae() {
+        
+    }
+    
+    
     
 
     public Boolean getLineasDorsales() {
