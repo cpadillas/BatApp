@@ -23,7 +23,7 @@ public class GUI extends javax.swing.JFrame {
     
     int Afirmativa[]=new int[]{0,2,0,0,7,19,28,8,9,0,0,14,0,0,0,0,0,0,0,0,0,0,0,26,0,0,27,0,0,0,0,0};
     int Negativa[]=new int[]{0,6,3,4,5,21,29,11,10,12,0,15,13,0,0,16,17,18,0,20,0,22,23,24,25,0,0,0,0,30,31,0};
-    int valorPregunta;
+    int valorPregunta=1;
     Boolean FotoSubida=false;
     
 
@@ -542,13 +542,14 @@ public class GUI extends javax.swing.JFrame {
         Ventana.setIconAt(0, icon1);
         Ventana.setIconAt(1, icon2);
         Ventana.setIconAt(2, icon3);
-        this.setExtendedState(GUI.MAXIMIZED_BOTH); 
+        //this.setExtendedState(GUI.MAXIMIZED_BOTH); 
         this.setIconImage(Fotito);
         Foto.setIcon(Bienvenido);
         Agregar.setIcon(Encontrar);
 
         //Llenamos la lista del banco
         Lista.setModel(DefineModel());
+        llenar();
 
         //this.set
     }
@@ -563,6 +564,17 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         Ventana = new javax.swing.JTabbedPane();
+        Añadir = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Lista = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        Foto = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Nombre = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Familia = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Alimentación = new javax.swing.JLabel();
         Banco = new javax.swing.JPanel();
         ImagenA = new javax.swing.JLabel();
         ImagenN = new javax.swing.JLabel();
@@ -587,17 +599,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         Subir = new javax.swing.JButton();
         Crear = new javax.swing.JButton();
-        Añadir = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Lista = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
-        Foto = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        Nombre = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        Familia = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        Alimentación = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -612,6 +613,90 @@ public class GUI extends javax.swing.JFrame {
                 VentanaMouseClicked(evt);
             }
         });
+
+        Lista.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        Lista.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                ListaPropertyChange(evt);
+            }
+        });
+        Lista.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                ListaValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Lista);
+
+        jLabel1.setText("Selecciona un murciélago");
+
+        Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Nombre:");
+
+        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nombre.setText("-");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Familia:");
+
+        Familia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Familia.setText("-");
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Alimentación:");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        Alimentación.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Alimentación.setText("-");
+
+        javax.swing.GroupLayout AñadirLayout = new javax.swing.GroupLayout(Añadir);
+        Añadir.setLayout(AñadirLayout);
+        AñadirLayout.setHorizontalGroup(
+            AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AñadirLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AñadirLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
+                        .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                            .addComponent(Familia, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                            .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                            .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 187, Short.MAX_VALUE))
+        );
+        AñadirLayout.setVerticalGroup(
+            AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AñadirLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1)
+                .addGap(11, 11, 11)
+                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(AñadirLayout.createSequentialGroup()
+                        .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Familia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Alimentación))
+                    .addComponent(jScrollPane1))
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
+
+        Ventana.addTab("Banco de Murciélagos", Añadir);
 
         ImagenA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -660,39 +745,34 @@ public class GUI extends javax.swing.JFrame {
         BancoLayout.setHorizontalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BancoLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
-                .addGap(118, 118, 118)
+                .addGap(27, 27, 27)
                 .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BancoLayout.createSequentialGroup()
-                        .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(148, 148, 148)
-                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Nombre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Familia1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Alimentación1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Foto1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(505, Short.MAX_VALUE))
+                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Foto1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Nombre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Familia1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Alimentación1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BancoLayout.setVerticalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BancoLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(44, 44, 44)
                 .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BancoLayout.createSequentialGroup()
-                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28))
-                    .addGroup(BancoLayout.createSequentialGroup()
-                        .addComponent(Foto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addComponent(Foto1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Nombre1)
@@ -703,12 +783,17 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Alimentación1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(166, Short.MAX_VALUE))
+                        .addComponent(Alimentación1))
+                    .addGroup(BancoLayout.createSequentialGroup()
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Identificar un murciélago", Banco);
@@ -762,7 +847,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(Subir))
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(162, 162, 162)
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Crear)
@@ -772,7 +857,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addContainerGap(947, Short.MAX_VALUE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
         IdentificarLayout.setVerticalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -792,98 +877,15 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(feeding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(IdentificarLayout.createSequentialGroup()
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                         .addGap(56, 56, 56)
                         .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Subir)
                             .addComponent(Crear))))
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
-
-        Lista.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
-        Lista.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                ListaPropertyChange(evt);
-            }
-        });
-        Lista.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                ListaValueChanged(evt);
-            }
-        });
-        jScrollPane1.setViewportView(Lista);
-
-        jLabel1.setText("Selecciona un murciélago");
-
-        Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Nombre:");
-
-        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Nombre.setText("-");
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Familia:");
-
-        Familia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Familia.setText("-");
-
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Alimentación:");
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        Alimentación.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Alimentación.setText("-");
-
-        javax.swing.GroupLayout AñadirLayout = new javax.swing.GroupLayout(Añadir);
-        Añadir.setLayout(AñadirLayout);
-        AñadirLayout.setHorizontalGroup(
-            AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AñadirLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 509, Short.MAX_VALUE)
-                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(Familia, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                    .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 491, Short.MAX_VALUE))
-        );
-        AñadirLayout.setVerticalGroup(
-            AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AñadirLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1)
-                .addGap(11, 11, 11)
-                .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(AñadirLayout.createSequentialGroup()
-                        .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Nombre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Familia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Alimentación))
-                    .addComponent(jScrollPane1))
-                .addContainerGap(309, Short.MAX_VALUE))
-        );
-
-        Ventana.addTab("Banco de Murciélagos", Añadir);
 
         BatApp.setText("BatApp");
 
@@ -908,15 +910,14 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Ventana)
+                .addComponent(Ventana, javax.swing.GroupLayout.DEFAULT_SIZE, 813, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Ventana)
-                .addContainerGap())
+                .addComponent(Ventana))
         );
 
         pack();
@@ -925,14 +926,6 @@ public class GUI extends javax.swing.JFrame {
     private void SalirMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirMousePressed
         System.exit(0);
     }//GEN-LAST:event_SalirMousePressed
-
-    private void ListaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ListaValueChanged
-        NavegarBanco();
-    }//GEN-LAST:event_ListaValueChanged
-
-    private void ListaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ListaPropertyChange
-
-    }//GEN-LAST:event_ListaPropertyChange
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
@@ -948,8 +941,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void VentanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaMouseClicked
         // TODO add your handling code here:
-        valorPregunta=1;
-        llenar();
+       // valorPregunta=1;
+       // llenar();
     }//GEN-LAST:event_VentanaMouseClicked
 
     private void ImagenAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagenAMouseClicked
@@ -1018,6 +1011,14 @@ public class GUI extends javax.swing.JFrame {
       // }
     
     }//GEN-LAST:event_CrearMouseClicked
+
+    private void ListaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ListaValueChanged
+        NavegarBanco();
+    }//GEN-LAST:event_ListaValueChanged
+
+    private void ListaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ListaPropertyChange
+
+    }//GEN-LAST:event_ListaPropertyChange
 
     /**
      * @param args the command line arguments
@@ -1110,9 +1111,9 @@ public class GUI extends javax.swing.JFrame {
             } else {
             }
         }else if (valorPregunta == 10 ) {
-            if (op == "") {
-                Murcielago Mumurci =(MurciHashii.get("Mesophylla Macconelli"));
-                ImageIcon Fotito=ImageHashii.get("Mesophylla Macconelli");
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Mesphylla Macconelli"));
+                ImageIcon Fotito=ImageHashii.get("Mesphylla Macconelli");
                 Nombre1.setText(Mumurci.getNombre());
                 Familia1.setText(Mumurci.getClass().getSimpleName());
                 Alimentación1.setText(Mumurci.getAlimentacion());
@@ -1132,7 +1133,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 12 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Platyrrhinus Infuscus"));
                 ImageIcon Fotito=ImageHashii.get("Platyrrhinus Infuscus");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1144,7 +1145,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 13 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Platyrrhinus Branchycephalus"));
                 ImageIcon Fotito=ImageHashii.get("Platyrrhinus Branchycephalus");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1166,7 +1167,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 14 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Uroderma Bilobatum"));
                 ImageIcon Fotito=ImageHashii.get("Uroderma Bilobatum");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1188,7 +1189,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 15 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Dermanura Anderseni"));
                 ImageIcon Fotito=ImageHashii.get("Dermanura Anderseni");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1200,7 +1201,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 16 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Artibeus Lituratus"));
                 ImageIcon Fotito=ImageHashii.get("Artibeus Lituratus");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1212,7 +1213,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 17 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Artibeus Planirostris"));
                 ImageIcon Fotito=ImageHashii.get("Artibeus Planirsotris");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1224,7 +1225,7 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }else if (valorPregunta == 18 ) {
-            if (op == "") {
+            if (op == "A") {
                 Murcielago Mumurci =(MurciHashii.get("Artibeus Auquatorialis"));
                 ImageIcon Fotito=ImageHashii.get("Artibeus Auquatorialis");
                 Nombre1.setText(Mumurci.getNombre());
@@ -1246,6 +1247,238 @@ public class GUI extends javax.swing.JFrame {
                 Foto1.setIcon(Fotito);
             }
         }
+        else if (valorPregunta == 19 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Carollia Perspicillata"));
+                ImageIcon Fotito=ImageHashii.get("Carollia Perspicillata");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+        }
+         else if (valorPregunta == 20 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Carollia Castanea"));
+                ImageIcon Fotito=ImageHashii.get("Carollia Castanea");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            else{
+                Murcielago Mumurci =(MurciHashii.get("Carollia Brevicauda"));
+                ImageIcon Fotito=ImageHashii.get("Carollia Brevicauda");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito); 
+            }
+         }
+             else if (valorPregunta == 21 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Mimom Crenulatum"));
+                ImageIcon Fotito=ImageHashii.get("Mimom Crenulatum");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+    }
+        
+            else if (valorPregunta == 22 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Lonchorhina Orinocensis"));
+                ImageIcon Fotito=ImageHashii.get("Lonchorhina Orinocensis");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+           
+    }
+        
+        else if (valorPregunta == 24 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Trachops Chirrosus"));
+                ImageIcon Fotito=ImageHashii.get("Trachops chirrosus");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+           
+    }
+        
+        else if (valorPregunta == 25 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Lampronycteris Brachyotis"));
+                ImageIcon Fotito=ImageHashii.get("Lampronycteris Brachyotis");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            else{
+              Murcielago Mumurci =(MurciHashii.get("Trynycteris Niceforti"));
+                ImageIcon Fotito=ImageHashii.get("Trynycteris Niceforti");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+           
+    }
+        
+        
+            else if (valorPregunta == 26 ) {
+            if (op != "A") {
+                Murcielago Mumurci =(MurciHashii.get("Phyllostomus Discolor"));
+                ImageIcon Fotito=ImageHashii.get("Phyllostomus Discolor");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+           
+           
+    }
+        
+                    else if (valorPregunta == 27 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Phyllostomus Elongatus"));
+                ImageIcon Fotito=ImageHashii.get("Phyllostomus Elongatus");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            else{
+             Murcielago Mumurci =(MurciHashii.get("Phyllostomus Hastatus"));
+                ImageIcon Fotito=ImageHashii.get("Phyllostomus Hastatus");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+           
+           
+    }
+        
+        
+                else if (valorPregunta == 28 ) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Eptesicus Brasiliensis"));
+                ImageIcon Fotito=ImageHashii.get("Eptesicus Brasiliensis");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            
+            else{
+                Murcielago Mumurci =(MurciHashii.get("Myotis Riparius"));
+                ImageIcon Fotito=ImageHashii.get("Myotis Riparius");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+                }
+            else if (valorPregunta == 29) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Cormura Brevisrostris"));
+                ImageIcon Fotito=ImageHashii.get("Cormura Brevisrostris");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            }
+        
+         else if (valorPregunta == 30) {
+            if (op == "A") {
+                Murcielago Mumurci =(MurciHashii.get("Rhynchonycteris Naso"));
+                ImageIcon Fotito=ImageHashii.get("Rhynchonycteris Naso");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            }
+        
+          else if (valorPregunta == 31) {
+            if (op != "A") {
+                Murcielago Mumurci =(MurciHashii.get("Saccopteryx Leptura"));
+                ImageIcon Fotito=ImageHashii.get("Saccopteryx Leptura");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            }
+            else{
+                Murcielago Mumurci =(MurciHashii.get("Saccopteryx Bilienata"));
+                ImageIcon Fotito=ImageHashii.get("Saccopteryx Bilienata");
+                Nombre1.setText(Mumurci.getNombre());
+                Familia1.setText(Mumurci.getClass().getSimpleName());
+                Alimentación1.setText(Mumurci.getAlimentacion());
+                int altura = Fotito.getIconHeight();
+                int ancho = Fotito.getIconWidth();
+                Foto1.setSize(ancho, altura);
+                Foto1.setIcon(Fotito);
+            
+            }
+            }
+        
+        
     }
     public void llenar(){
         Pregunta x= bancoPreguntas.get(valorPregunta);
