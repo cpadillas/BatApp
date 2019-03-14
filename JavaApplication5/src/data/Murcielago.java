@@ -37,6 +37,12 @@ public class Murcielago {
         
     }
 
+    public Murcielago(ImageIcon foto, String nombre, String alimentacion) {
+        this.foto = foto;
+        this.nombre = nombre;
+        this.alimentacion = alimentacion;
+    }
+
  
 
     
