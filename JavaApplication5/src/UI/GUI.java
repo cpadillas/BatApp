@@ -6,16 +6,23 @@ import data.Phyllostomidae;
 import data.Pregunta;
 import data.Vespertilionidae;
 import java.awt.Image;
+import java.io.File;
+import java.io.FileFilter;
 import java.util.HashMap;
 import java.util.Set;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class GUI extends javax.swing.JFrame {
+
+ 
     
     int Afirmativa[]=new int[]{0,2,0,0,7,19,28,8,9,0,0,14,0,0,0,0,0,0,0,0,0,0,0,26,0,0,27,0,0,0,0,0};
     int Negativa[]=new int[]{0,6,3,4,5,21,29,11,10,12,0,15,13,0,0,16,17,18,0,20,0,22,23,24,25,0,0,0,0,30,31,0};
     int valorPregunta;
+    ImageIcon Preview;
 
     //Importamos las imágenes del menu desde la carpeta
     ImageIcon icon1 = new ImageIcon(
@@ -532,7 +539,7 @@ public class GUI extends javax.swing.JFrame {
         Ventana.setIconAt(0, icon1);
         Ventana.setIconAt(1, icon2);
         Ventana.setIconAt(2, icon3);
-        //this.setExtendedState(GUI.MAXIMIZED_BOTH); 
+        this.setExtendedState(GUI.MAXIMIZED_BOTH); 
         this.setIconImage(Fotito);
         Foto.setIcon(Bienvenido);
         Agregar.setIcon(Encontrar);
@@ -571,13 +578,14 @@ public class GUI extends javax.swing.JFrame {
         preguntaA = new javax.swing.JLabel();
         Identificar = new javax.swing.JPanel();
         Agregar = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        family = new javax.swing.JTextField();
+        feeding = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         Subir = new javax.swing.JButton();
+        Crear = new javax.swing.JButton();
         Menu = new javax.swing.JMenuBar();
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
@@ -638,7 +646,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 509, Short.MAX_VALUE)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
@@ -647,7 +655,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 140, Short.MAX_VALUE))
+                .addGap(0, 491, Short.MAX_VALUE))
         );
         AñadirLayout.setVerticalGroup(
             AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -717,7 +725,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                     .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(859, Short.MAX_VALUE))
         );
         BancoLayout.setVerticalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -735,31 +743,43 @@ public class GUI extends javax.swing.JFrame {
 
         Ventana.addTab("Identificar un murciélago", Banco);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        family.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                familyActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        feeding.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                feedingActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("jLabel9");
+        jLabel9.setText("Nombre");
 
-        jLabel10.setText("jLabel10");
+        jLabel10.setText("Familia");
 
-        jLabel11.setText("jLabel11");
+        jLabel11.setText("Alimentación");
 
         Subir.setText("Subir Foto");
+        Subir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubirMouseClicked(evt);
+            }
+        });
+
+        Crear.setText("Añadir Murciélago");
+        Crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout IdentificarLayout = new javax.swing.GroupLayout(Identificar);
         Identificar.setLayout(IdentificarLayout);
@@ -768,44 +788,46 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(IdentificarLayout.createSequentialGroup()
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IdentificarLayout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                        .addGap(168, 168, 168)
-                        .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)))
+                        .addGap(157, 157, 157)
+                        .addComponent(Subir))
                     .addGroup(IdentificarLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(Subir)))
-                .addContainerGap(235, Short.MAX_VALUE))
+                        .addGap(91, 91, 91)
+                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(162, 162, 162)
+                .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Crear)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(family, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(feeding, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addContainerGap(947, Short.MAX_VALUE))
         );
         IdentificarLayout.setVerticalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IdentificarLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IdentificarLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
-                    .addGroup(IdentificarLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
                         .addComponent(jLabel9)
                         .addGap(2, 2, 2)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(family, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(66, 66, 66)
-                .addComponent(Subir)
-                .addContainerGap(262, Short.MAX_VALUE))
+                        .addComponent(feeding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(IdentificarLayout.createSequentialGroup()
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                        .addGap(56, 56, 56)
+                        .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Subir)
+                            .addComponent(Crear))))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
@@ -859,17 +881,17 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ListaPropertyChange
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void familyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_familyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_familyActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void feedingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_feedingActionPerformed
 
     private void VentanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaMouseClicked
         // TODO add your handling code here:
@@ -900,6 +922,40 @@ public class GUI extends javax.swing.JFrame {
         valorPregunta=Negativa[valorPregunta];
         llenar();
     }//GEN-LAST:event_preguntaNMouseClicked
+
+    private void SubirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubirMouseClicked
+       int seleccion;
+       JFileChooser Escoger=new JFileChooser();
+        seleccion =Escoger.showOpenDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION){
+           
+            try{
+            FileNameExtensionFilter filter;
+            filter = new FileNameExtensionFilter(
+                        "Images", "png");
+            File fichero =Escoger.getSelectedFile();
+            String Location = fichero.getAbsolutePath();
+            Preview = new ImageIcon(Location);
+            
+            Agregar.setIcon(Preview);
+           // EnviarImagen(Preview);
+            }
+            catch(Exception NoesImagen){
+                System.out.println("El archivo seleccionado no es una imagen");
+            }
+        }
+        else if(seleccion == JFileChooser.CANCEL_OPTION){ 
+            Escoger.setVisible(false);
+                    }  
+    }//GEN-LAST:event_SubirMouseClicked
+
+    private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
+       String Nombre,Familia,alimentacion;
+       Nombre=name.getText();
+       Familia=family.getText();
+       alimentacion=feeding.getText();
+       
+    }//GEN-LAST:event_CrearMouseClicked
 
     /**
      * @param args the command line arguments
@@ -933,6 +989,7 @@ public class GUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new GUI().setVisible(true);
         });
+        
 
     }
     
@@ -1015,6 +1072,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Añadir;
     private javax.swing.JPanel Banco;
     private javax.swing.JMenu BatApp;
+    private javax.swing.JButton Crear;
     private javax.swing.JLabel Familia;
     private javax.swing.JLabel Foto;
     private javax.swing.JPanel Identificar;
@@ -1026,6 +1084,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem Salir;
     private javax.swing.JButton Subir;
     private javax.swing.JTabbedPane Ventana;
+    private javax.swing.JTextField family;
+    private javax.swing.JTextField feeding;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1034,9 +1094,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField name;
     private javax.swing.JLabel preguntaA;
     private javax.swing.JLabel preguntaN;
     // End of variables declaration//GEN-END:variables
