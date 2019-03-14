@@ -3,6 +3,7 @@ package UI;
 import data.Emballonuridae;
 import data.Murcielago;
 import data.Phyllostomidae;
+import data.Pregunta;
 import data.Vespertilionidae;
 import java.awt.Image;
 import java.util.HashMap;
@@ -36,6 +37,7 @@ public class GUI extends javax.swing.JFrame {
     //Creamos los diccionarios de murcielagos y fotos respectivamente
     HashMap<String, Murcielago> MurciHashii = new HashMap<>();
     HashMap<String, ImageIcon> ImageHashii = new HashMap<>();
+    HashMap<Integer, Pregunta> bancoPreguntas = new HashMap<>();
 
     public GUI() {
         
@@ -281,6 +283,177 @@ public class GUI extends javax.swing.JFrame {
         ImageHashii.put(PlatyrhinusInfuscus.getNombre(), IPlatyrhinusInfuscus);
         ImageHashii.put(SturniraLilium.getNombre(), ISturniraLilium);
         
+        //Inicializar imagenes preguntas
+        
+        ImageIcon unoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+        ImageIcon unoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+        ImageIcon dosA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+        ImageIcon dosN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+        ImageIcon tresA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+        ImageIcon tresN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+        ImageIcon cuatroA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+        ImageIcon cuatroN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+        ImageIcon cincoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+        ImageIcon cincoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon seisA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+        ImageIcon seisN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+        ImageIcon sieteA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+        ImageIcon sieteN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+        ImageIcon ochoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+        ImageIcon ochoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+        ImageIcon nueveA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+        ImageIcon nueveN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+        ImageIcon diezA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+        ImageIcon diezN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon onceA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+        ImageIcon onceN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+        ImageIcon doceA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+        ImageIcon doceN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+        ImageIcon treceA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+        ImageIcon treceN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+        ImageIcon catorceA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+        ImageIcon catorceN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+        ImageIcon quinceA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+        ImageIcon quinceN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon dieciseisA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+        ImageIcon dieciseisN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+        ImageIcon diecisieteA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+        ImageIcon diecisieteN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+        ImageIcon dieciochoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+        ImageIcon dieciochoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+        ImageIcon diecinueveA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+        ImageIcon diecinueveN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+        ImageIcon veinteA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+        ImageIcon veinteN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon veintiunoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+        ImageIcon veintiunoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+        ImageIcon veintidosA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+        ImageIcon veintidosN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+        ImageIcon veintitresA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+        ImageIcon veintitresN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+        ImageIcon veinticuatroA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+        ImageIcon veinticuatroN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+        ImageIcon veinticincoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+        ImageIcon veinticincoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon veintiseisA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1A.png"));
+        ImageIcon veintiseisN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/1N.png"));
+        ImageIcon veintisieteA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2A.png"));
+        ImageIcon veintisieteN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/2N.png"));
+        ImageIcon veintiochoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3A.png"));
+        ImageIcon veintiochoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/3N.png"));
+        ImageIcon veintinueveA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4A.png"));
+        ImageIcon veintinueveN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/4N.png"));
+        ImageIcon treintaA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5A.png"));
+        ImageIcon treintaN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon treintaunoA = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        ImageIcon treintaunoN = new ImageIcon(
+                this.getClass().getResource("/UI/Resources/Preguntas/5N.png"));
+        
+        //Inicializar el banco de preguntas
+        
+        Pregunta pregunta1 = new Pregunta(1, "Hoja nasal presente", "Hoja nasal ausente", unoA, unoN);
+        Pregunta pregunta2 = new Pregunta(2, "Hoja nasal rudimentaria, incisivos superiores más anchos que los caninos y pólex bien desarrollado", 
+                "Hoja nasal prominente; incisivos superiores menores que los caninos, y pólex pequeño", dosA, dosN);
+        Pregunta pregunta3 = new Pregunta(3, "Hocico largo y angosto; orejas pequeñas y bien separadas", 
+                "Hocico ni largo ni angosto; hoja nasal generalmente larga; orejas generalmente largas", tresA, tresN);
+        Pregunta pregunta4 = new Pregunta(4, "Sin cola; uropatagio reducido y angosto; hoja nasal bien desarrollada pero no excepcionalmente"
+                + " larga; varias especies con líneas claras en la espalda o la cara",
+                "Con cola; uropatagio usualmente bien desarrollado; hocico no redondeado; orejas grandes o muy grandes; hoja nasal"
+                + " larga o muy larga", cuatroA, cuatroN);
+        Pregunta pregunta5 = new Pregunta(5, "Mentón con una verruga central rodeada de series de verrugas pequeñas y redondeadas, "
+                + "hoja nasal grande; cola hasta la mitad del uropatagio donde sale a la superficie, aunque a veces apenas se nota; "
+                + "antebrazo 34-45 mm", "Hoja nasal ausente", cincoA, cincoN);
+        Pregunta pregunta6 = new Pregunta(6, "Cola contenida dentro del uropatagio, bolsas ausentes en el protopatagio tres falanges"
+                + " en el tercer dedo", "Cola libre, fuera o sobre el uropatagio, bolsas en el protopatagio, sin falanges en el tercer"
+                        + " dedo", seisA, seisN);
+        Pregunta pregunta7 = new Pregunta(7, "Incisivos superiores centrales oblicuos y de diferente forma que los extremos", 
+                "Incisivos superiores centrales rectos y no muy diferentes en forma que los extremos", sieteA, sieteN);
+        Pregunta pregunta8 = new Pregunta(8, "Hoja nasal presente", "Hoja nasal ausente", ochoA, ochoN);
+        Pregunta pregunta9 = new Pregunta(9, "Hoja nasal presente", "Hoja nasal ausente", nueveA, nueveN);
+        Pregunta pregunta10 = new Pregunta(10, "Hoja nasal presente", "Hoja nasal ausente", diezA, diezN);
+        Pregunta pregunta11 = new Pregunta(11, "Hoja nasal presente", "Hoja nasal ausente", onceA, onceN);
+        Pregunta pregunta12 = new Pregunta(12, "Hoja nasal presente", "Hoja nasal ausente", doceA, doceN);
+        Pregunta pregunta13 = new Pregunta(13, "Hoja nasal presente", "Hoja nasal ausente", treceA, treceN);
+        Pregunta pregunta14 = new Pregunta(14, "Hoja nasal presente", "Hoja nasal ausente", catorceA, catorceN);
+        Pregunta pregunta15 = new Pregunta(15, "Hoja nasal presente", "Hoja nasal ausente", quinceA, quinceN);
+        Pregunta pregunta16 = new Pregunta(16, "Hoja nasal presente", "Hoja nasal ausente", dieciseisA, dieciseisN);
+        Pregunta pregunta17 = new Pregunta(17, "Hoja nasal presente", "Hoja nasal ausente", diecisieteA, diecisieteN);
+        Pregunta pregunta18 = new Pregunta(18, "Hoja nasal presente", "Hoja nasal ausente", dieciochoA, dieciochoN);
+        Pregunta pregunta19 = new Pregunta(19, "Hoja nasal presente", "Hoja nasal ausente", diecinueveA, diecinueveN);
+        Pregunta pregunta20 = new Pregunta(20, "Hoja nasal presente", "Hoja nasal ausente", veinteA, veinteN);
+        Pregunta pregunta21 = new Pregunta(21, "Hoja nasal presente", "Hoja nasal ausente", veintiunoA, veintiunoN);
+        Pregunta pregunta22 = new Pregunta(22, "Hoja nasal presente", "Hoja nasal ausente", veintidosA, veintidosN);
+        Pregunta pregunta23 = new Pregunta(23, "Hoja nasal presente", "Hoja nasal ausente", veintitresA, veintitresN);
+        Pregunta pregunta24 = new Pregunta(24, "Hoja nasal presente", "Hoja nasal ausente", veinticuatroA, veinticuatroN);
+        Pregunta pregunta25 = new Pregunta(25, "Hoja nasal presente", "Hoja nasal ausente", veinticincoA, veinticincoN);
+        
+        
+        
+        
+        bancoPreguntas.put(pregunta1.getNumero(), pregunta1);
+        bancoPreguntas.put(pregunta2.getNumero(), pregunta2);
+        
         
         //Asociamos las fotos a los respectivos murcielagos
         AsociarImagenes();
@@ -324,6 +497,10 @@ public class GUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Alimentación = new javax.swing.JLabel();
         Banco = new javax.swing.JPanel();
+        ImagenA = new javax.swing.JLabel();
+        ImagenN = new javax.swing.JLabel();
+        preguntaN = new javax.swing.JLabel();
+        preguntaA = new javax.swing.JLabel();
         Identificar = new javax.swing.JPanel();
         Agregar = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -342,6 +519,11 @@ public class GUI extends javax.swing.JFrame {
         setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
 
         Ventana.setFont(new java.awt.Font("Tempus Sans ITC", 0, 15)); // NOI18N
+        Ventana.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VentanaMouseClicked(evt);
+            }
+        });
 
         Lista.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         Lista.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -364,20 +546,20 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setText("Nombre:");
 
         Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Nombre.setText("Lala");
+        Nombre.setText("-");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Familia:");
 
         Familia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Familia.setText("Mimi");
+        Familia.setText("-");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Alimentación:");
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Alimentación.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Alimentación.setText("Dulces");
+        Alimentación.setText("-");
 
         javax.swing.GroupLayout AñadirLayout = new javax.swing.GroupLayout(Añadir);
         Añadir.setLayout(AñadirLayout);
@@ -388,7 +570,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
@@ -397,7 +579,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 125, Short.MAX_VALUE))
+                .addGap(0, 140, Short.MAX_VALUE))
         );
         AñadirLayout.setVerticalGroup(
             AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,20 +603,44 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Alimentación))
                     .addComponent(jScrollPane1))
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Banco de Murciélagos", Añadir);
+
+        preguntaN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        preguntaN.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        preguntaA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        preguntaA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout BancoLayout = new javax.swing.GroupLayout(Banco);
         Banco.setLayout(BancoLayout);
         BancoLayout.setHorizontalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 827, Short.MAX_VALUE)
+            .addGroup(BancoLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ImagenA, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(preguntaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(118, 118, 118)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ImagenN, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(preguntaN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         BancoLayout.setVerticalGroup(
             BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(BancoLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ImagenN, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ImagenA, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(preguntaN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preguntaA, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Identificar un murciélago", Banco);
@@ -473,7 +679,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                         .addGap(168, 168, 168)
                         .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -485,7 +691,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addComponent(Subir)))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         IdentificarLayout.setVerticalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,7 +699,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
                     .addGroup(IdentificarLayout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(jLabel9)
@@ -509,7 +715,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(66, 66, 66)
                 .addComponent(Subir)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
@@ -535,11 +741,17 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Ventana)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Ventana)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Ventana)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Ventana)
+                .addContainerGap())
         );
 
         pack();
@@ -568,6 +780,21 @@ public class GUI extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void VentanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentanaMouseClicked
+        // TODO add your handling code here:
+        Pregunta x= bancoPreguntas.get(1);
+        int altura = x.getAfirmativo().getIconHeight();
+        int ancho = x.getAfirmativo().getIconWidth();
+        ImagenA.setSize(ancho, altura);
+        ImagenA.setIcon(x.getAfirmativo());
+        altura = x.getNegativo().getIconHeight();
+        ancho = x.getNegativo().getIconWidth();
+        ImagenN.setSize(ancho, altura);
+        ImagenN.setIcon(x.getNegativo());
+        preguntaA.setText(x.getPreguntaA());
+        preguntaN.setText(x.getPreguntaN());
+    }//GEN-LAST:event_VentanaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -602,7 +829,14 @@ public class GUI extends javax.swing.JFrame {
         });
 
     }
-
+    
+    public void Interfazpregunta(ImageIcon fotito){
+        int altura = fotito.getIconHeight();
+        int ancho = fotito.getIconWidth();
+        Foto.setSize(ancho, altura);
+        Foto.setIcon(fotito);
+    }
+    
     public DefaultListModel DefineModel() {
 
         DefaultListModel<String> model = new DefaultListModel<>();
@@ -665,6 +899,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel Familia;
     private javax.swing.JLabel Foto;
     private javax.swing.JPanel Identificar;
+    private javax.swing.JLabel ImagenA;
+    private javax.swing.JLabel ImagenN;
     private javax.swing.JList<String> Lista;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel Nombre;
@@ -682,6 +918,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel preguntaA;
+    private javax.swing.JLabel preguntaN;
     // End of variables declaration//GEN-END:variables
 
     
