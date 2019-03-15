@@ -5,6 +5,7 @@ import data.Murcielago;
 import data.Phyllostomidae;
 import data.Pregunta;
 import data.Vespertilionidae;
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileFilter;
@@ -546,6 +547,7 @@ public class GUI extends javax.swing.JFrame {
         this.setIconImage(Fotito);
         Foto.setIcon(Bienvenido);
         Agregar.setIcon(Encontrar);
+        Banco.setBackground(Color.WHITE);
 
         //Llenamos la lista del banco
         Lista.setModel(DefineModel());
@@ -567,7 +569,7 @@ public class GUI extends javax.swing.JFrame {
         Añadir = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Lista = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
+        Label = new javax.swing.JLabel();
         Foto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Nombre = new javax.swing.JLabel();
@@ -604,6 +606,7 @@ public class GUI extends javax.swing.JFrame {
         BatApp = new javax.swing.JMenu();
         Salir = new javax.swing.JMenuItem();
         Ayuda = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
@@ -628,7 +631,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Lista);
 
-        jLabel1.setText("Selecciona un murciélago");
+        Label.setText("Selecciona un murciélago");
 
         Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -658,7 +661,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(AñadirLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Label, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AñadirLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(144, 144, 144)
@@ -670,13 +673,13 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                             .addComponent(Alimentación, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                             .addComponent(Foto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 187, Short.MAX_VALUE))
+                .addGap(0, 219, Short.MAX_VALUE))
         );
         AñadirLayout.setVerticalGroup(
             AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AñadirLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel1)
+                .addComponent(Label)
                 .addGap(11, 11, 11)
                 .addGroup(AñadirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(AñadirLayout.createSequentialGroup()
@@ -694,7 +697,7 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Alimentación))
                     .addComponent(jScrollPane1))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Banco de Murciélagos", Añadir);
@@ -765,7 +768,7 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Foto1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Foto1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
                             .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Nombre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -784,7 +787,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(BancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BancoLayout.createSequentialGroup()
-                        .addComponent(Foto1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Foto1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -806,7 +809,7 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(reiniciar)
                 .addGap(19, 19, 19))
         );
@@ -872,7 +875,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
         IdentificarLayout.setVerticalGroup(
             IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -892,12 +895,12 @@ public class GUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(feeding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(IdentificarLayout.createSequentialGroup()
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                         .addGap(56, 56, 56)
                         .addGroup(IdentificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Subir)
                             .addComponent(Crear))))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
 
         Ventana.addTab("Añadir un murciélago", Identificar);
@@ -914,7 +917,16 @@ public class GUI extends javax.swing.JFrame {
 
         Menu.add(BatApp);
 
-        Ayuda.setText("Ayuda");
+        Ayuda.setText("Acerca de ");
+
+        jMenuItem1.setText("Ver info");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jMenuItem1MousePressed(evt);
+            }
+        });
+        Ayuda.add(jMenuItem1);
+
         Menu.add(Ayuda);
 
         setJMenuBar(Menu);
@@ -925,8 +937,7 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Ventana)
-                .addContainerGap())
+                .addComponent(Ventana))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1009,6 +1020,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
        if(FotoSubida){
+           if(!"".equals(family.getText())&&!"".equals(name.getText())&&!"".equals(feeding.getText())){
        String Nombre,Familia,alimentacion;
        Nombre=name.getText();
        Familia=family.getText();
@@ -1018,12 +1030,22 @@ public class GUI extends javax.swing.JFrame {
        MurciHashii.put(Nombre, TempMurci);
        ImageHashii.put(Nombre, Preview);
        Lista.setModel(DefineModel());
+       JOptionPane.showMessageDialog(rootPane, "Muciélago añadido con éxito");
        FotoSubida=false;
+       Agregar.setIcon(Encontrar);
+       name=null;
+       feeding=null;
+       family=null;
        }
-//catch(){
-         //  System.out.println("No hay imagen");
-          // JOptionPane.showInputDialog("Seleccione una foto");
-      // }
+           else{
+               JOptionPane.showMessageDialog(rootPane, "Rellene todos los campos");
+           }
+       }
+       else{
+       JOptionPane.showMessageDialog(rootPane, "Añada una imagen");
+       }
+       
+
     
     }//GEN-LAST:event_CrearMouseClicked
 
@@ -1039,7 +1061,17 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         valorPregunta=1;
         llenar();
+        Foto1.setIcon(null);
+        Nombre1.setText(null);
+        Familia1.setText(null);
+        Alimentación1.setText(null);
     }//GEN-LAST:event_reiniciarActionPerformed
+
+    private void jMenuItem1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MousePressed
+
+        JOptionPane.showMessageDialog(Label,"Información Banco de Murciélagos: \n Felipe Lamprea.\n Diseño e implementación:\n Daniel Montaña \n Cirsthian Padilla");
+        
+    }//GEN-LAST:event_jMenuItem1MousePressed
 
     /**
      * @param args the command line arguments
@@ -1589,6 +1621,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Identificar;
     private javax.swing.JLabel ImagenA;
     private javax.swing.JLabel ImagenN;
+    private javax.swing.JLabel Label;
     private javax.swing.JList<String> Lista;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel Nombre;
@@ -1598,7 +1631,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane Ventana;
     private javax.swing.JTextField family;
     private javax.swing.JTextField feeding;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -1608,6 +1640,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
